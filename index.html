@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI GOVERN | Sistemas Operativos Privados para Empresas de Alto Nivel</title>
-    <meta name="description" content="Diseñamos tu propio sistema privado instalado en tu servidor. Sin suscripciones eternas por usuario, sin fuga de secretos comerciales y adaptado 100% a tus flujos reales.">
+    <title>AI GOVERN | Galaxia Operativa & Sistemas Privados a Medida</title>
+    <meta name="description" content="Explora la Galaxia Operativa de AI GOVERN. Sistemas privados a medida instalados en tu infraestructura, sin suscripciones eternas ni fuga de información.">
     
-    <!-- Fonts: Newsreader (Editorial Serif) + Plus Jakarta Sans (Modern Clean Sans) + JetBrains Mono -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
     
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -27,22 +27,20 @@
                     },
                     colors: {
                         dark: {
-                            950: '#03050c', // Pure abyss black
-                            900: '#070a14', // Deep background
-                            850: '#0c1122',
-                            800: '#12182c', // Surface
-                            700: '#1e2642', // Border
+                            950: '#02050e',
+                            900: '#060a17',
+                            850: '#0a1024',
+                            800: '#101833',
+                            700: '#1b254b',
                         },
-                        cyber: {
-                            400: '#00f0ff',
-                            500: '#00d0e0',
-                        },
-                        neon: {
-                            400: '#10b981',
-                            500: '#059669',
-                        },
-                        accent: {
-                            amber: '#f59e0b',
+                        galaxy: {
+                            purple: '#c084fc',
+                            pink: '#f472b6',
+                            blue: '#60a5fa',
+                            cyan: '#22d3ee',
+                            emerald: '#34d399',
+                            amber: '#fbbf24',
+                            rose: '#fb7185',
                         }
                     }
                 }
@@ -51,395 +49,391 @@
     </script>
     <style>
         ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #03050c; }
-        ::-webkit-scrollbar-thumb { background: #1e2642; border-radius: 3px; }
-        ::-webkit-scrollbar-thumb:hover { background: #00f0ff; }
+        ::-webkit-scrollbar-track { background: #02050e; }
+        ::-webkit-scrollbar-thumb { background: #1b254b; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #22d3ee; }
 
-        .border-subtle {
-            border-color: rgba(255, 255, 255, 0.07);
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-8px) scale(1.02); }
         }
-        .border-subtle-hover:hover {
-            border-color: rgba(0, 240, 255, 0.35);
+        @keyframes floatReverse {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(8px) scale(0.98); }
         }
 
-        .glow-accent {
-            box-shadow: 0 0 35px -5px rgba(0, 240, 255, 0.25);
+        .animate-float-1 { animation: floatSlow 6s ease-in-out infinite; }
+        .animate-float-2 { animation: floatReverse 7s ease-in-out infinite; }
+        .animate-float-3 { animation: floatSlow 8s ease-in-out infinite 1s; }
+        .animate-float-4 { animation: floatReverse 6.5s ease-in-out infinite 0.5s; }
+        .animate-float-5 { animation: floatSlow 7.5s ease-in-out infinite 1.5s; }
+        .animate-float-6 { animation: floatReverse 8.5s ease-in-out infinite 2s; }
+
+        .galaxy-bubble {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+            position: relative;
         }
-        .glow-accent:hover {
-            box-shadow: 0 0 50px -5px rgba(0, 240, 255, 0.45);
+        .galaxy-bubble:hover {
+            transform: scale(1.12) !important;
+            z-index: 40;
+        }
+        .galaxy-bubble.active {
+            transform: scale(1.15) !important;
+            z-index: 45;
+        }
+
+        .bubble-halo {
+            position: absolute;
+            inset: -20px;
+            border-radius: 9999px;
+            filter: blur(22px);
+            opacity: 0.6;
+            transition: all 0.4s ease;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .galaxy-bubble:hover .bubble-halo,
+        .galaxy-bubble.active .bubble-halo {
+            opacity: 1;
+            inset: -30px;
+            filter: blur(28px);
         }
     </style>
 </head>
-<body class="bg-dark-950 text-slate-300 font-sans antialiased overflow-x-hidden selection:bg-cyan-500/25 selection:text-cyan-200">
+<body class="bg-dark-950 text-slate-200 font-sans antialiased overflow-x-hidden selection:bg-cyan-500/25 selection:text-cyan-200 min-h-screen">
 
     <!-- Atmospheric background light -->
     <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-        <div class="absolute -top-48 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-gradient-to-b from-cyan-600/10 via-blue-600/5 to-transparent rounded-full blur-[140px]"></div>
-        <div class="absolute top-1/3 -right-48 w-[600px] h-[600px] bg-emerald-600/5 rounded-full blur-[160px]"></div>
-        <div class="absolute bottom-1/4 -left-48 w-[600px] h-[600px] bg-purple-600/5 rounded-full blur-[160px]"></div>
+        <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-gradient-to-b from-purple-600/10 via-cyan-600/10 to-transparent rounded-full blur-[160px]"></div>
+        <div class="absolute top-1/2 -right-48 w-[600px] h-[600px] bg-pink-600/10 rounded-full blur-[170px]"></div>
+        <div class="absolute bottom-10 -left-48 w-[600px] h-[600px] bg-emerald-600/10 rounded-full blur-[170px]"></div>
     </div>
 
     <!-- Minimal Sticky Header -->
-    <header class="sticky top-0 z-50 bg-dark-950/80 backdrop-blur-xl border-b border-subtle transition-all duration-300">
-        <div class="max-w-6xl mx-auto px-6 sm:px-8 h-20 flex items-center justify-between">
+    <header class="sticky top-0 z-50 bg-dark-950/80 backdrop-blur-xl border-b border-dark-700/60 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 h-20 flex items-center justify-between">
             
             <a href="#" class="flex items-center gap-3 group">
-                <span class="font-serif italic font-bold text-2xl tracking-tight text-white group-hover:text-cyan-300 transition-colors">
-                    AI GOVERN
-                </span>
-                <span class="hidden sm:inline-block h-3 w-[1px] bg-slate-700"></span>
-                <span class="hidden sm:inline-block font-mono text-[10px] text-slate-400 tracking-widest uppercase">
-                    Sistemas Privados
-                </span>
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-purple-500 via-pink-500 to-cyan-400 p-[1.5px] transition-transform duration-300 group-hover:scale-105 shadow-[0_0_15px_rgba(192,132,252,0.35)]">
+                    <div class="w-full h-full bg-dark-950 rounded-[10px] flex items-center justify-center text-cyan-300 font-bold">
+                        <i class="fa-solid fa-atom"></i>
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-bold text-xl tracking-tight text-white flex items-center gap-2">
+                        AI GOVERN
+                        <span class="px-2 py-0.5 rounded text-[9px] font-mono font-bold bg-purple-500/20 text-purple-300 border border-purple-500/30">GALAXY OS</span>
+                    </span>
+                    <span class="text-[10px] font-mono text-slate-400 tracking-wider uppercase">Sistemas Privados a Medida</span>
+                </div>
             </a>
 
-            <nav class="hidden md:flex items-center space-x-9 text-xs font-semibold text-slate-300">
-                <a href="#problema" class="hover:text-white transition-colors">El Riesgo</a>
-                <a href="#casos" class="hover:text-white transition-colors">Casos de Éxito</a>
-                <a href="#metodo" class="hover:text-white transition-colors">Metodología</a>
+            <nav class="hidden md:flex items-center space-x-8 text-xs font-semibold text-slate-300">
+                <a href="#galaxy-showcase" class="text-cyan-400 flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+                    <span>Galaxia Interactiva</span>
+                </a>
+                <a href="#como-funciona" class="hover:text-white transition-colors">Cómo Funciona</a>
+                <a href="#sectores" class="hover:text-white transition-colors">Sectores</a>
                 <a href="#liderazgo" class="hover:text-white transition-colors">Dirección</a>
             </nav>
 
-            <div class="flex items-center">
-                <a href="#agenda" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white hover:bg-slate-100 text-dark-950 font-bold text-xs tracking-tight transition-all duration-200 transform hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+            <div class="flex items-center gap-3">
+                <a href="#agenda" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-cyan-400 to-emerald-400 hover:from-cyan-300 hover:to-emerald-300 text-dark-950 font-extrabold text-xs tracking-tight transition-all duration-200 transform hover:scale-105 shadow-[0_0_20px_rgba(34,211,238,0.35)]">
+                    <i class="fa-solid fa-calendar-check"></i>
                     <span>Agendar Diagnóstico</span>
-                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
                 </a>
             </div>
 
         </div>
     </header>
 
-    <main class="relative z-10">
+    <main class="relative z-10 space-y-24 sm:space-y-32">
 
         <!-- ===================================================================== -->
-        <!-- 1. HERO SECTION: DIRECT, EDITORIAL, STRIPE/DEEL CALIBER -->
+        <!-- HERO & INTERACTIVE GALAXY CRM -->
         <!-- ===================================================================== -->
-        <section class="max-w-5xl mx-auto px-6 sm:px-8 pt-20 pb-20 sm:pt-28 sm:pb-24 text-center">
+        <section id="galaxy-showcase" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12">
             
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-dark-900 border border-subtle text-xs font-mono text-cyan-400 mb-8 shadow-sm">
-                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
-                <span>INFRAESTRUCTURA OPERATIVA SOBERANA</span>
-            </div>
-
-            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-serif font-bold text-white tracking-tight leading-[1.08] mb-8">
-                Tu empresa no necesita más software. <br class="hidden sm:inline">
-                <span class="italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-slate-200 via-cyan-200 to-cyan-400">
-                    Necesita su propio sistema.
-                </span>
-            </h1>
-
-            <p class="max-w-2xl mx-auto text-lg sm:text-xl text-slate-300 font-normal leading-relaxed mb-10">
-                Mapeamos tus procesos reales, entendemos cómo opera tu equipo y diseñamos tu propio sistema privado instalado en tus servidores. <strong class="text-white">Sin cuotas mensuales por usuario. Sin fuga de secretos comerciales. Hecho a tu medida.</strong>
-            </p>
-
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
-                <a href="#agenda" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-cyan-400 hover:bg-cyan-300 text-dark-950 font-extrabold text-sm tracking-tight transition-all duration-300 transform hover:-translate-y-0.5 glow-accent">
-                    <span>Agendar Diagnóstico Operativo (30 Min)</span>
-                    <i class="fa-solid fa-arrow-right text-xs"></i>
-                </a>
-
-                <a href="https://wa.me/584149065797?text=Hola%20Barbara,%20quiero%20coordinar%20una%20sesion%20de%20diagnostico%20operativo" target="_blank" rel="noopener" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-full bg-dark-900 border border-slate-700 hover:border-slate-500 text-slate-200 hover:text-white font-semibold text-sm transition-all">
-                    <i class="fa-brands fa-whatsapp text-emerald-400"></i>
-                    <span>Consultar por WhatsApp</span>
-                </a>
-            </div>
-
-            <p class="text-xs text-slate-500 font-mono">
-                Sesión directa de 30 minutos con Barbara Piccolo • Sin compromiso comercial
-            </p>
-
-        </section>
-
-        <!-- ===================================================================== -->
-        <!-- 2. EARLY SOCIAL PROOF & TRUST BARRIER (IMMEDIATE VALIDATION) -->
-        <!-- ===================================================================== -->
-        <section class="border-y border-subtle bg-dark-900/60 py-10">
-            <div class="max-w-5xl mx-auto px-6 sm:px-8">
-                <p class="text-center text-[11px] font-mono tracking-widest text-slate-400 uppercase mb-6">
-                    Criterio y arquitectura diseñados para sectores de máxima exigencia
+            <div class="text-center max-w-3xl mx-auto mb-10 space-y-4">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-dark-900 border border-dark-700 text-xs font-mono text-cyan-400">
+                    <i class="fa-solid fa-sparkles"></i>
+                    <span>SIMULADOR OPERATIVO EN VIVO</span>
+                </div>
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.12]">
+                    Tu empresa no necesita más software. <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400">
+                        Necesita su propia Galaxia Operativa.
+                    </span>
+                </h1>
+                <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+                    Visualiza cómo un sistema privado centraliza tus expedientes, contratos y contingencias en tiempo real. <strong>Haz clic en cualquier esfera para explorar cómo operamos cada fase en tus servidores.</strong>
                 </p>
-                
-                <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-12 text-slate-400 text-xs sm:text-sm font-medium">
-                    <span class="flex items-center gap-2 hover:text-white transition-colors">
-                        <i class="fa-solid fa-building-columns text-cyan-400 text-sm"></i>
-                        <span>Banca & Finanzas</span>
-                    </span>
-                    <span class="flex items-center gap-2 hover:text-white transition-colors">
-                        <i class="fa-solid fa-scale-balanced text-cyan-400 text-sm"></i>
-                        <span>Direcciones Jurídicas & Despachos</span>
-                    </span>
-                    <span class="flex items-center gap-2 hover:text-white transition-colors">
-                        <i class="fa-solid fa-shield-halved text-cyan-400 text-sm"></i>
-                        <span>Cumplimiento Regulatorio & ALD</span>
-                    </span>
-                    <span class="flex items-center gap-2 hover:text-white transition-colors">
-                        <i class="fa-solid fa-chart-pie text-cyan-400 text-sm"></i>
-                        <span>Holdings Corporativos</span>
-                    </span>
-                    <span class="flex items-center gap-2 hover:text-white transition-colors">
-                        <i class="fa-solid fa-lock text-cyan-400 text-sm"></i>
-                        <span>Estándares RGPD & Secreto Fiduciario</span>
-                    </span>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===================================================================== -->
-        <!-- 3. EL COSTO DE LA INACCIÓN (AGITATING THE REAL PAIN) -->
-        <!-- ===================================================================== -->
-        <section id="problema" class="max-w-5xl mx-auto px-6 sm:px-8 py-24 sm:py-32">
-            
-            <div class="max-w-3xl mb-16">
-                <span class="text-amber-400 font-mono text-xs font-bold uppercase tracking-widest block mb-3">
-                    La Realidad Incómoda
-                </span>
-                <h2 class="text-3xl sm:text-5xl font-serif font-bold text-white tracking-tight leading-tight">
-                    Por qué las herramientas actuales están costando dinero y exponiendo tu empresa
-                </h2>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
+            <!-- GALAXY CONTAINER -->
+            <div class="relative rounded-3xl p-6 sm:p-10 border border-slate-800 bg-gradient-to-b from-[#0a0f26]/90 via-[#060a18]/95 to-dark-950 shadow-[0_0_60px_rgba(192,132,252,0.12)] overflow-hidden">
                 
-                <div class="md:col-span-7 rounded-3xl p-8 sm:p-10 bg-dark-900 border border-subtle flex flex-col justify-between space-y-6">
-                    <div class="space-y-4">
-                        <div class="w-11 h-11 rounded-2xl bg-red-500/10 text-red-400 flex items-center justify-center text-lg">
-                            <i class="fa-solid fa-credit-card"></i>
-                        </div>
-                        <h3 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
-                            La trampa de las suscripciones eternas
-                        </h3>
-                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-                            Las empresas promedio pagan miles de dólares al año en licencias de software que prometían orden pero terminaron creando resistencia. Tu equipo vuelve a lo de siempre: correos desordenados, chats improvisados y hojas de cálculo desconectadas. Te adaptas tú a su app rígida, en lugar de que la herramienta se adapte a tu operación.
-                        </p>
-                    </div>
-                    <div class="pt-6 border-t border-subtle flex items-center justify-between text-xs font-mono text-red-400">
-                        <span>Dinero recurrente quemado</span>
-                        <span>Cero propiedad sobre la herramienta</span>
-                    </div>
-                </div>
-
-                <div class="md:col-span-5 rounded-3xl p-8 sm:p-10 bg-dark-900 border border-subtle flex flex-col justify-between space-y-6">
-                    <div class="space-y-4">
-                        <div class="w-11 h-11 rounded-2xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-lg">
-                            <i class="fa-solid fa-user-shield"></i>
-                        </div>
-                        <h3 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
-                            La fuga invisible de secretos
-                        </h3>
-                        <p class="text-slate-300 text-sm leading-relaxed">
-                            Tus empleados ya están usando herramientas de inteligencia artificial públicas a espaldas de la dirección para acelerar su trabajo. Cada balance, borrador de contrato y estrategia confidencial pegado en esas plataformas vive ahora en servidores ajenos sin tu consentimiento.
-                        </p>
-                    </div>
-                    <div class="pt-6 border-t border-subtle text-xs font-mono text-amber-400">
-                        Riesgo regulatorio y pérdida de control fiduciario.
-                    </div>
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- ===================================================================== -->
-        <!-- 4. CASOS DE ESTUDIO ESTRUCTURADOS (DESAFÍO -> SOLUCIÓN -> RESULTADO) -->
-        <!-- ===================================================================== -->
-        <section id="casos" class="bg-dark-900/50 border-y border-subtle py-24 sm:py-32">
-            <div class="max-w-5xl mx-auto px-6 sm:px-8">
-                
-                <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-16">
-                    <div>
-                        <span class="text-cyan-400 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
-                            Hechos Comprobables
-                        </span>
-                        <h2 class="text-3xl sm:text-5xl font-serif font-bold text-white tracking-tight">
-                            Casos de Eficiencia Operativa
-                        </h2>
-                    </div>
-                    <p class="text-slate-400 text-sm max-w-sm">
-                        La eficiencia no se mide en promesas tecnológicas, sino en horas recuperadas, contingencias liquidadas y acuerdos cerrados.
-                    </p>
-                </div>
-
-                <div class="space-y-8">
+                <!-- TOP BAR: KPI METRICS (Réplica de tu primera imagen) -->
+                <div class="flex flex-col lg:flex-row items-center justify-between gap-4 pb-8 border-b border-slate-800/80">
                     
-                    <div class="rounded-3xl p-8 sm:p-10 bg-dark-950 border border-subtle border-subtle-hover transition-all space-y-6">
-                        <div class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-subtle">
-                            <span class="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider">
-                                Sector: Dirección Jurídica & Asuntos Corporativos
-                            </span>
-                            <span class="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-300 font-mono text-xs font-bold">
-                                Ciclo Reducido: de 6 días a 18 horas
-                            </span>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-purple-500 to-pink-500 flex items-center justify-center text-white shadow-lg">
+                            <i class="fa-solid fa-shapes text-lg"></i>
                         </div>
-
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
-                            <div class="space-y-2">
-                                <span class="font-mono text-xs uppercase text-slate-500 block">El Desafío</span>
-                                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                                    Cuello de botella severo en la revisión de contratos mercantiles y riesgo latente de perder plazos fatales e intimaciones por dispersión de documentos en correos y WhatsApp.
-                                </p>
-                            </div>
-
-                            <div class="space-y-2">
-                                <span class="font-mono text-xs uppercase text-slate-500 block">La Solución Aplicada</span>
-                                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                                    Mapeo completo de la operativa contractual y despliegue de un sistema privado con semáforo de términos perentorios, biblioteca inmutable de modelos y auditoría preventiva de contrapartes.
-                                </p>
-                            </div>
-
-                            <div class="space-y-2 bg-dark-900 p-4 rounded-2xl border border-subtle">
-                                <span class="font-mono text-xs uppercase text-emerald-400 font-bold block">El Resultado</span>
-                                <p class="text-white text-xs sm:text-sm font-semibold leading-relaxed">
-                                    Reducción del 75% en el tiempo de respuesta legal. 0% de vencimientos precluidos y eliminación de costos por horas extras de revisión externa.
-                                </p>
-                            </div>
+                        <div>
+                            <h2 class="text-white font-extrabold text-lg sm:text-xl tracking-tight flex items-center gap-2">
+                                Neon Pipeline OS
+                            </h2>
+                            <p class="text-xs text-slate-400 font-mono">Control Operativo & Soberanía de Datos</p>
                         </div>
                     </div>
 
-                    <div class="rounded-3xl p-8 sm:p-10 bg-dark-950 border border-subtle border-subtle-hover transition-all space-y-6">
-                        <div class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-subtle">
-                            <span class="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider">
-                                Sector: Operaciones Financieras & Cumplimiento Regulatorio
+                    <div class="flex flex-wrap items-center justify-center gap-3 font-mono text-center">
+                        <div class="px-5 py-2.5 rounded-2xl bg-purple-950/30 border border-purple-500/40 text-purple-200">
+                            <span class="text-[10px] text-purple-300 block uppercase font-bold tracking-wider">
+                                <i class="fa-solid fa-users text-xs mr-1"></i> Total Asuntos
                             </span>
-                            <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-300 font-mono text-xs font-bold">
-                                Blindaje 100% On-Premise
-                            </span>
+                            <span class="text-xl sm:text-2xl font-black text-white" id="kpi-total">28</span>
                         </div>
 
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
-                            <div class="space-y-2">
-                                <span class="font-mono text-xs uppercase text-slate-500 block">El Desafío</span>
-                                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                                    Uso no autorizado de herramientas públicas de IA por parte del personal para redactar análisis crediticios y reportes, exponiendo balances confidenciales y datos de clientes regulados.
-                                </p>
-                            </div>
-
-                            <div class="space-y-2">
-                                <span class="font-mono text-xs uppercase text-slate-500 block">La Solución Aplicada</span>
-                                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                                    Auditoría de herramientas en uso y despliegue de un entorno privado en servidores locales de la empresa con sanitización automática de datos sensibles antes de cualquier procesamiento.
-                                </p>
-                            </div>
-
-                            <div class="space-y-2 bg-dark-900 p-4 rounded-2xl border border-subtle">
-                                <span class="font-mono text-xs uppercase text-emerald-400 font-bold block">El Resultado</span>
-                                <p class="text-white text-xs sm:text-sm font-semibold leading-relaxed">
-                                    Eliminación total del riesgo de sanción regulatoria. Conservación absoluta del secreto fiduciario y aumento del 40% en la productividad analítica del equipo.
-                                </p>
-                            </div>
+                        <div class="px-5 py-2.5 rounded-2xl bg-pink-950/30 border border-pink-500/40 text-pink-200">
+                            <span class="text-[10px] text-pink-300 block uppercase font-bold tracking-wider">
+                                <i class="fa-solid fa-chart-line text-xs mr-1"></i> Casos Activos
+                            </span>
+                            <span class="text-xl sm:text-2xl font-black text-white" id="kpi-active">18</span>
                         </div>
+
+                        <div class="px-5 py-2.5 rounded-2xl bg-cyan-950/30 border border-cyan-500/40 text-cyan-200">
+                            <span class="text-[10px] text-cyan-300 block uppercase font-bold tracking-wider">
+                                <i class="fa-solid fa-dollar-sign text-xs mr-1"></i> Valor Blindado
+                            </span>
+                            <span class="text-xl sm:text-2xl font-black text-white" id="kpi-value">$3,603k</span>
+                        </div>
+                    </div>
+
+                    <div class="hidden xl:flex items-center gap-3 px-4 py-2 rounded-2xl bg-slate-900/90 border border-slate-700 text-xs">
+                        <i class="fa-solid fa-hand-pointer text-cyan-400 animate-bounce"></i>
+                        <span class="text-slate-300 font-medium">Haz clic en una esfera para ver detalles</span>
                     </div>
 
                 </div>
 
+                <!-- CENTER STAGE: ESFERAS ORBITALES -->
+                <div class="relative min-h-[460px] sm:min-h-[520px] flex items-center justify-center py-10 my-4">
+                    
+                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                        <div class="w-[320px] h-[320px] sm:w-[480px] sm:h-[480px] rounded-full border border-purple-500/10 animate-pulse"></div>
+                        <div class="w-[480px] h-[480px] sm:w-[680px] sm:h-[680px] rounded-full border border-cyan-500/10"></div>
+                        <div class="w-[640px] h-[640px] sm:w-[880px] sm:h-[880px] rounded-full border border-pink-500/5"></div>
+                    </div>
+
+                    <div class="relative w-full max-w-4xl h-[440px] sm:h-[480px] mx-auto">
+                        
+                        <!-- 1. SPHERE: LEAD / INGRESO (Top Center - Purple) -->
+                        <div onclick="selectBubble('lead')" id="bubble-lead" class="galaxy-bubble animate-float-1 absolute top-[5%] left-[40%] sm:left-[43%] -translate-x-1/2 w-28 h-28 sm:w-36 sm:h-36 rounded-full bg-gradient-to-b from-purple-900/80 to-purple-950/90 border-2 border-purple-400 flex flex-col items-center justify-center text-center p-2 shadow-2xl active">
+                            <div class="bubble-halo bg-purple-500"></div>
+                            <span class="text-2xl sm:text-3xl font-extrabold text-white font-mono">5</span>
+                            <span class="text-xs sm:text-sm font-bold text-purple-200 uppercase tracking-tight">Ingreso / Mapeo</span>
+                            <span class="text-[11px] font-mono text-purple-300">$241k</span>
+                        </div>
+
+                        <!-- 2. SPHERE: CALIFICADOS (Right Top - Blue) -->
+                        <div onclick="selectBubble('qualified')" id="bubble-qualified" class="galaxy-bubble animate-float-2 absolute top-[12%] right-[10%] sm:right-[15%] w-28 h-28 sm:w-36 sm:h-36 rounded-full bg-gradient-to-b from-blue-900/80 to-blue-950/90 border-2 border-blue-400 flex flex-col items-center justify-center text-center p-2 shadow-2xl">
+                            <div class="bubble-halo bg-blue-500"></div>
+                            <span class="text-2xl sm:text-3xl font-extrabold text-white font-mono">4</span>
+                            <span class="text-xs sm:text-sm font-bold text-blue-200 uppercase tracking-tight">Calificación</span>
+                            <span class="text-[11px] font-mono text-blue-300">$331k</span>
+                        </div>
+
+                        <!-- 3. SPHERE: PROPUESTA / ESTRATEGIA (Right Bottom - Cyan/Teal) -->
+                        <div onclick="selectBubble('proposal')" id="bubble-proposal" class="galaxy-bubble animate-float-3 absolute bottom-[14%] right-[12%] sm:right-[16%] w-28 h-28 sm:w-36 sm:h-36 rounded-full bg-gradient-to-b from-cyan-900/80 to-cyan-950/90 border-2 border-cyan-400 flex flex-col items-center justify-center text-center p-2 shadow-2xl">
+                            <div class="bubble-halo bg-cyan-500"></div>
+                            <span class="text-2xl sm:text-3xl font-extrabold text-white font-mono">4</span>
+                            <span class="text-xs sm:text-sm font-bold text-cyan-200 uppercase tracking-tight">Estrategia</span>
+                            <span class="text-[11px] font-mono text-cyan-300">$460k</span>
+                        </div>
+
+                        <!-- 4. SPHERE: NEGOCIACIÓN / REDLINE (Bottom Center - Gold/Amber) -->
+                        <div onclick="selectBubble('negotiation')" id="bubble-negotiation" class="galaxy-bubble animate-float-4 absolute bottom-[4%] left-[42%] sm:left-[45%] -translate-x-1/2 w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-gradient-to-b from-amber-900/80 to-amber-950/90 border-2 border-amber-400 flex flex-col items-center justify-center text-center p-2 shadow-2xl">
+                            <div class="bubble-halo bg-amber-500"></div>
+                            <span class="text-3xl sm:text-4xl font-extrabold text-white font-mono">5</span>
+                            <span class="text-xs sm:text-sm font-bold text-amber-200 uppercase tracking-tight">Negociación</span>
+                            <span class="text-xs font-mono text-amber-300 font-bold">$1,175k</span>
+                        </div>
+
+                        <!-- 5. SPHERE: BLINDAJE CERRADO / GANADO (Left Bottom - Emerald Green) -->
+                        <div onclick="selectBubble('closed-won')" id="bubble-closed-won" class="galaxy-bubble animate-float-5 absolute bottom-[14%] left-[10%] sm:left-[14%] w-28 h-28 sm:w-36 sm:h-36 rounded-full bg-gradient-to-b from-emerald-900/80 to-emerald-950/90 border-2 border-emerald-400 flex flex-col items-center justify-center text-center p-2 shadow-2xl">
+                            <div class="bubble-halo bg-emerald-500"></div>
+                            <span class="text-2xl sm:text-3xl font-extrabold text-white font-mono">5</span>
+                            <span class="text-xs sm:text-sm font-bold text-emerald-200 uppercase tracking-tight">Blindados</span>
+                            <span class="text-[11px] font-mono text-emerald-300">$1,145k</span>
+                        </div>
+
+                        <!-- 6. SPHERE: CONTINGENCIAS PREVENIDAS (Left Top - Rose/Red) -->
+                        <div onclick="selectBubble('closed-lost')" id="bubble-closed-lost" class="galaxy-bubble animate-float-6 absolute top-[12%] left-[8%] sm:left-[12%] w-28 h-28 sm:w-36 sm:h-36 rounded-full bg-gradient-to-b from-rose-900/80 to-rose-950/90 border-2 border-rose-400 flex flex-col items-center justify-center text-center p-2 shadow-2xl">
+                            <div class="bubble-halo bg-rose-500"></div>
+                            <span class="text-2xl sm:text-3xl font-extrabold text-white font-mono">5</span>
+                            <span class="text-xs sm:text-sm font-bold text-rose-200 uppercase tracking-tight">Riesgo Evitado</span>
+                            <span class="text-[11px] font-mono text-rose-300">$240k</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- DYNAMIC DETAIL DRAWER -->
+                <div id="galaxy-detail-panel" class="mt-4 p-6 sm:p-8 rounded-2xl bg-dark-900/95 border border-purple-500/30 transition-all duration-300">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+                        <div class="flex items-center gap-3">
+                            <span id="detail-badge" class="px-3 py-1 rounded-full text-xs font-mono font-bold uppercase bg-purple-500/20 text-purple-300 border border-purple-500/40">
+                                FASE SELECCIONADA: INGRESO & MAPEO DE FLUJOS
+                            </span>
+                            <span id="detail-value" class="text-sm font-mono font-bold text-emerald-400">
+                                Valor en Cartera: $241,000 USD
+                            </span>
+                        </div>
+                        <div class="text-xs font-mono text-slate-400" id="detail-responsible">
+                            Supervisión: Barbara Piccolo • Dirección Letrada
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-5">
+                        <div class="space-y-1">
+                            <span class="text-xs font-mono text-slate-400 uppercase">Qué resuelve en esta fase:</span>
+                            <p class="text-sm text-slate-200" id="detail-desc">
+                                Auditamos los cuellos de botella de tu equipo y detectamos qué herramientas públicas están usando los colaboradores a espaldas de la dirección (Shadow AI). Identificamos riesgos antes de que cuesten dinero.
+                            </p>
+                        </div>
+                        <div class="space-y-1">
+                            <span class="text-xs font-mono text-slate-400 uppercase">Garantía en Servidor Propio:</span>
+                            <p class="text-sm text-slate-200" id="detail-infra">
+                                La información nunca se envía a nubes comerciales abiertas. Todo el análisis reside en tu infraestructura física o nube privada.
+                            </p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-dark-950 border border-slate-800 flex flex-col justify-between">
+                            <span class="text-xs font-mono text-cyan-400 font-bold uppercase">Impacto Operativo:</span>
+                            <span class="text-base font-bold text-white mt-1" id="detail-impact">
+                                0% Fuga de Información • Diagnóstico en 72 Horas
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
+
         </section>
 
         <!-- ===================================================================== -->
-        <!-- 5. METODOLOGÍA DE 4 FASES (CÓMO TRABAJAMOS CONTIGO) -->
+        <!-- SECTION 2: CÓMO CONVERTIMOS ESTO EN TU SISTEMA PRIVADO -->
         <!-- ===================================================================== -->
-        <section id="metodo" class="max-w-5xl mx-auto px-6 sm:px-8 py-24 sm:py-32">
-            
-            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+        <section id="como-funciona" class="max-w-6xl mx-auto px-6 sm:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
                 <span class="text-cyan-400 font-mono text-xs font-bold uppercase tracking-widest">
                     Entrega Llave en Mano
                 </span>
-                <h2 class="text-3xl sm:text-5xl font-serif font-bold text-white tracking-tight">
-                    Cómo construimos tu sistema
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+                    No compras un software. Construimos tu infraestructura.
                 </h2>
-                <p class="text-slate-400 text-base">
-                    No compras una licencia ni te dejamos solo con un tutorial. Diseñamos, implementamos y entregamos tu solución en tu infraestructura.
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                    Las empresas exitosas no obligan a sus equipos a aprender una herramienta rígida. Diseñamos un sistema exclusivo para tu forma exacta de operar.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 
-                <div class="p-6 rounded-2xl bg-dark-900 border border-subtle space-y-3">
-                    <span class="font-serif italic text-3xl font-bold text-cyan-400">01</span>
-                    <h3 class="font-bold text-white text-base">Mapeo del Flujo Real</h3>
+                <div class="p-7 rounded-2xl bg-dark-900 border border-slate-800 space-y-3">
+                    <span class="text-2xl font-mono font-bold text-purple-400">01</span>
+                    <h3 class="text-base font-bold text-white">Mapeo del Flujo Real</h3>
                     <p class="text-xs text-slate-300 leading-relaxed">
-                        Analizamos cómo trabaja tu equipo hoy: dónde se frenan los documentos, qué herramientas están usando por su cuenta y dónde se pierde margen.
+                        Analizamos cómo trabaja tu equipo hoy: dónde se frenan los documentos, qué herramientas usan y dónde se pierde margen o tiempo.
                     </p>
                 </div>
 
-                <div class="p-6 rounded-2xl bg-dark-900 border border-subtle space-y-3">
-                    <span class="font-serif italic text-3xl font-bold text-slate-400">02</span>
-                    <h3 class="font-bold text-white text-base">Diseño Exclusivo</h3>
+                <div class="p-7 rounded-2xl bg-dark-900 border border-slate-800 space-y-3">
+                    <span class="text-2xl font-mono font-bold text-pink-400">02</span>
+                    <h3 class="text-base font-bold text-white">Diseño a la Medida</h3>
                     <p class="text-xs text-slate-300 leading-relaxed">
-                        Programamos tu solución a la medida exacta de tus plantillas, reglas de negocio y flujos de validación. Nada es una plantilla genérica.
+                        Programamos la lógica de tu negocio, tus modelos de contratos sin recortes y tus flujos de validación con supervisión humana.
                     </p>
                 </div>
 
-                <div class="p-6 rounded-2xl bg-dark-900 border border-subtle space-y-3">
-                    <span class="font-serif italic text-3xl font-bold text-slate-400">03</span>
-                    <h3 class="font-bold text-white text-base">Instalación en Tu Servidor</h3>
+                <div class="p-7 rounded-2xl bg-dark-900 border border-slate-800 space-y-3">
+                    <span class="text-2xl font-mono font-bold text-cyan-400">03</span>
+                    <h3 class="text-base font-bold text-white">Despliegue en Tu Servidor</h3>
                     <p class="text-xs text-slate-300 leading-relaxed">
-                        Dejamos el sistema funcionando en tus servidores físicos o en tu nube privada. Todo queda protegido dentro de tu perímetro.
+                        Lo dejamos funcionando en tus propios servidores físicos o en tu nube privada. Tus secretos comerciales jamás salen de tu control.
                     </p>
                 </div>
 
-                <div class="p-6 rounded-2xl bg-dark-900 border border-subtle space-y-3">
-                    <span class="font-serif italic text-3xl font-bold text-emerald-400">04</span>
-                    <h3 class="font-bold text-white text-base">Control y Autonomía</h3>
+                <div class="p-7 rounded-2xl bg-dark-900 border border-slate-800 space-y-3">
+                    <span class="text-2xl font-mono font-bold text-emerald-400">04</span>
+                    <h3 class="text-base font-bold text-white">Autonomía y Propiedad</h3>
                     <p class="text-xs text-slate-300 leading-relaxed">
-                        Capacitamos a tu equipo para operar con fluidez. Eres el dueño absoluto de tu sistema sin rentas mensuales perpetuas.
+                        Capacitamos a tu equipo. Eres dueño absoluto de tu sistema sin pagar cuotas mensuales eternas por cada usuario.
                     </p>
                 </div>
 
             </div>
-
         </section>
 
         <!-- ===================================================================== -->
-        <!-- 6. LA DIRECCIÓN ESTRATÉGICA (BARBARA PICCOLO PROFILE) -->
+        <!-- SECTION 3: SECTORES DONDE EL IMPACTO ES INMEDIATO -->
         <!-- ===================================================================== -->
-        <section id="liderazgo" class="border-t border-subtle bg-dark-900/60 py-24 sm:py-32">
-            <div class="max-w-4xl mx-auto px-6 sm:px-8">
+        <section id="sectores" class="max-w-6xl mx-auto px-6 sm:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+                <div>
+                    <span class="text-purple-400 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
+                        Autoridad Sectorial
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+                        Sectores de Máxima Exigencia
+                    </h2>
+                </div>
+                <p class="text-slate-400 text-sm max-w-sm">
+                    Entendemos el riesgo fiduciario, la confidencialidad y los términos fatales en industrias altamente reguladas.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <div class="rounded-3xl p-8 sm:p-14 bg-dark-950 border border-subtle relative overflow-hidden">
-                    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
-                        
-                        <div class="md:col-span-8 space-y-5">
-                            <span class="text-cyan-400 font-mono text-xs font-bold uppercase tracking-widest block">
-                                La Autoridad Detrás de la Solución
-                            </span>
+                <div class="p-8 rounded-3xl bg-dark-900 border border-slate-800 space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Direcciones Jurídicas & Despachos</h3>
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                        Control de plazos fatales, cotejo de contratos de contrapartes en minutos y redacción de instrumentos íntegros sin recortes notariales.
+                    </p>
+                    <div class="text-xs font-mono text-purple-300 pt-3 border-t border-slate-800">
+                        ✓ Cero preclusiones ni fugas de expedientes
+                    </div>
+                </div>
 
-                            <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white leading-tight">
-                                Entendemos el trabajo real. <br>
-                                <span class="italic font-normal text-slate-300">Por eso diseñamos para la eficiencia.</span>
-                            </h2>
+                <div class="p-8 rounded-3xl bg-dark-900 border border-slate-800 space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Banca, Finanzas & Cumplimiento (Compliance)</h3>
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                        Sistemas preparados para supervisión regulatoria estricta, auditorías ALD y prevención de lavado, con trazabilidad inmutable.
+                    </p>
+                    <div class="text-xs font-mono text-cyan-300 pt-3 border-t border-slate-800">
+                        ✓ Secreto fiduciario 100% blindado
+                    </div>
+                </div>
 
-                            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-                                Los desarrolladores de software construyen código rápido, pero desconocen el rigor de una auditoría, la gravedad de una preclusión procesal o las exigencias del secreto fiduciario.
-                            </p>
-
-                            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-                                <strong>AI GOVERN está fundado y dirigido por Barbara Piccolo:</strong> Abogada Senior Corporativa y Especialista en Ciberseguridad con más de 15 años de trayectoria liderando áreas de <strong>Banca, Cumplimiento Regulatorio, Holdings Corporativos y Startups Tecnológicas</strong>.
-                            </p>
-
-                            <div class="p-4 rounded-2xl bg-dark-900 border border-subtle text-xs sm:text-sm text-cyan-200 italic font-serif">
-                                "Sé exactamente dónde se traba un proceso, sé cómo trabaja un equipo bajo presión y sé cuánto dinero se pierde por falta de trazabilidad. No diseñamos teoría: diseñamos el sistema que tu negocio necesita para operar con tranquilidad y máxima velocidad."
-                                <span class="block mt-2 font-sans font-bold text-white text-xs not-italic font-mono">— Barbara Piccolo</span>
-                            </div>
-                        </div>
-
-                        <div class="md:col-span-4 flex flex-col items-center justify-center p-6 bg-dark-900 rounded-2xl border border-subtle text-center space-y-4">
-                            <div class="w-24 h-24 rounded-2xl bg-gradient-to-tr from-cyan-400 via-blue-500 to-purple-600 p-[2px] shadow-[0_0_30px_rgba(0,240,255,0.25)]">
-                                <div class="w-full h-full bg-dark-950 rounded-[14px] flex items-center justify-center">
-                                    <span class="text-3xl font-serif font-bold text-cyan-400">BP</span>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="font-extrabold text-white text-lg">Barbara Piccolo</div>
-                                <div class="text-xs text-cyan-400 font-mono mt-0.5">Dirección Estratégica & Ciberseguridad</div>
-                                <div class="text-[11px] text-slate-500 font-mono mt-0.5">Caracas • Global Remote</div>
-                            </div>
-                            <a href="https://www.linkedin.com/in/barbara-piccolo-613705b6" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0a66c2]/20 border border-[#0a66c2]/40 text-sky-200 hover:bg-[#0a66c2]/30 text-xs font-semibold transition-all">
-                                <i class="fa-brands fa-linkedin"></i>
-                                <span>LinkedIn Oficial</span>
-                            </a>
-                        </div>
-
+                <div class="p-8 rounded-3xl bg-dark-900 border border-slate-800 space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Holdings Corporativos & Negocios</h3>
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                        Alineación operativa entre Tecnología, Finanzas y Operaciones para acelerar contrataciones sin cuellos de botella burocráticos.
+                    </p>
+                    <div class="text-xs font-mono text-emerald-300 pt-3 border-t border-slate-800">
+                        ✓ Decisiones ejecutivas en horas, no días
                     </div>
                 </div>
 
@@ -447,36 +441,88 @@
         </section>
 
         <!-- ===================================================================== -->
-        <!-- 7. CALENDLY & ZERO-FRICTION BOOKING (CONVERSIÓN DIRECTA) -->
+        <!-- SECTION 4: DIRECCIÓN ESTRATÉGICA (BARBARA PICCOLO PROFILE) -->
         <!-- ===================================================================== -->
-        <section id="agenda" class="max-w-4xl mx-auto px-6 sm:px-8 py-24 sm:py-32 text-center space-y-8">
+        <section id="liderazgo" class="max-w-5xl mx-auto px-6 sm:px-8">
+            <div class="rounded-3xl p-8 sm:p-12 bg-dark-900 border border-slate-800">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                    
+                    <div class="md:col-span-8 space-y-4">
+                        <span class="text-cyan-400 font-mono text-xs font-bold uppercase tracking-widest block">
+                            Dirección Estratégica & Ciberseguridad
+                        </span>
+
+                        <h2 class="text-2xl sm:text-4xl font-extrabold text-white">
+                            Entendemos el trabajo real. Por eso diseñamos para la eficiencia.
+                        </h2>
+
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Los desarrolladores de software construyen código rápido, pero desconocen el rigor de una auditoría, la gravedad de un término procesal perentorio o las exigencias del secreto profesional.
+                        </p>
+
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            <strong>AI GOVERN está fundado y dirigido por Barbara Piccolo:</strong> Abogada Senior Corporativa y Especialista en Ciberseguridad con más de 15 años de trayectoria en <strong>Banca, Cumplimiento Normativo, Holdings Corporativos y Startups Tecnológicas</strong>.
+                        </p>
+
+                        <div class="p-4 rounded-xl bg-dark-950 border border-slate-800 text-xs sm:text-sm text-cyan-200 italic font-serif">
+                            "Sé exactamente dónde se traba un proceso, sé cómo trabaja un equipo bajo presión y sé cuánto dinero se pierde por falta de trazabilidad. No diseñamos teoría: diseñamos el sistema que tu negocio necesita para operar con tranquilidad y máxima velocidad."
+                            <span class="block mt-2 font-sans font-bold text-white text-xs not-italic font-mono">— Barbara Piccolo</span>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-4 flex flex-col items-center justify-center p-6 bg-dark-950 rounded-2xl border border-slate-800 text-center space-y-4">
+                        <div class="w-20 h-20 rounded-2xl bg-gradient-to-tr from-purple-500 via-pink-500 to-cyan-400 p-[2px] shadow-[0_0_25px_rgba(192,132,252,0.3)]">
+                            <div class="w-full h-full bg-dark-900 rounded-[14px] flex items-center justify-center">
+                                <span class="text-2xl font-mono font-extrabold text-cyan-400">BP</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="font-bold text-white text-base">Barbara Piccolo</div>
+                            <div class="text-xs text-cyan-300 font-mono mt-0.5">Dirección Estratégica & LegalTech</div>
+                            <div class="text-[11px] text-slate-500 font-mono mt-0.5">Caracas • Global Remote</div>
+                        </div>
+                        <a href="https://www.linkedin.com/in/barbara-piccolo-613705b6" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0a66c2]/20 border border-[#0a66c2]/40 text-sky-200 hover:bg-[#0a66c2]/30 text-xs font-semibold transition-all">
+                            <i class="fa-brands fa-linkedin"></i>
+                            <span>Perfil en LinkedIn</span>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================================== -->
+        <!-- SECTION 5: AGENDA & CALENDLY (CONVERSIÓN DIRECTA) -->
+        <!-- ===================================================================== -->
+        <section id="agenda" class="max-w-4xl mx-auto px-6 sm:px-8 text-center space-y-8 pb-20">
             
             <div class="space-y-4 max-w-2xl mx-auto">
                 <span class="px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-xs font-mono font-bold text-cyan-400 uppercase">
-                    Diagnóstico Estratégico
+                    Diagnóstico Operativo
                 </span>
                 
-                <h2 class="text-3xl sm:text-5xl font-serif font-bold text-white tracking-tight leading-tight">
-                    Descubre dónde tu empresa pierde tiempo y cómo blindar tu operación
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+                    Mapeemos el Flujo de Tu Empresa
                 </h2>
                 
-                <p class="text-slate-300 text-base leading-relaxed">
-                    Agenda una sesión privada de 30 minutos. Evaluaremos tus procesos críticos, las herramientas que tu equipo ya utiliza y te mostraremos cómo se estructuraría tu propio sistema privado para multiplicar la eficiencia sin arriesgar tu información.
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                    Agenda una sesión directa de 30 minutos. Evaluaremos tus procesos críticos, las herramientas que tu equipo ya utiliza y te mostraremos cómo se estructuraría tu propio sistema privado.
                 </p>
             </div>
 
-            <div class="rounded-3xl border border-subtle bg-dark-900 overflow-hidden shadow-2xl p-2 sm:p-4 text-left">
-                <div class="calendly-inline-widget" data-url="https://calendly.com/barbarapiccolo-aigovern/30min?hide_event_type_details=1&hide_gdpr_banner=1&background_color=070a14&text_color=f8fafc&primary_color=00f0ff" style="min-width:320px;height:700px;"></div>
+            <!-- Calendly Widget (Clean Embed) -->
+            <div class="rounded-3xl border border-slate-800 bg-dark-900 overflow-hidden shadow-2xl p-2 sm:p-4 text-left">
+                <div class="calendly-inline-widget" data-url="https://calendly.com/barbarapiccolo-aigovern/30min?hide_event_type_details=1&hide_gdpr_banner=1&background_color=060a17&text_color=f8fafc&primary_color=22d3ee" style="min-width:320px;height:700px;"></div>
                 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
             </div>
 
-            <div class="pt-6 flex flex-wrap justify-center items-center gap-4 text-xs font-mono">
-                <a href="https://wa.me/584149065797?text=Hola%20Barbara,%20quiero%20agendar%20una%20sesion%20de%20diagnostico%20de%20eficiencia%20operativa" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 hover:bg-emerald-500/30 transition-all font-bold">
+            <div class="pt-4 flex flex-wrap justify-center items-center gap-4 text-xs font-mono">
+                <a href="https://wa.me/584149065797?text=Hola%20Barbara,%20quiero%20agendar%20una%20sesion%20de%20diagnostico%20operativo" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 hover:bg-emerald-500/30 transition-all font-bold">
                     <i class="fa-brands fa-whatsapp text-sm"></i>
-                    <span>Contactar directamente por WhatsApp (+58 414-9065797)</span>
+                    <span>Escribir por WhatsApp (+58 414-9065797)</span>
                 </a>
 
-                <a href="mailto:barbarapiccolo@iagovern.space?subject=Solicitud%20de%20Diagnostico%20Operativo%20-%20AI%20GOVERN" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-dark-900 border border-subtle text-slate-300 hover:text-white transition-all font-semibold">
+                <a href="mailto:barbarapiccolo@iagovern.space?subject=Solicitud%20de%20Diagnostico%20Operativo%20-%20AI%20GOVERN" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-dark-900 border border-slate-800 text-slate-300 hover:text-white transition-all font-semibold">
                     <i class="fa-solid fa-envelope text-cyan-400"></i>
                     <span>barbarapiccolo@iagovern.space</span>
                 </a>
@@ -486,24 +532,104 @@
 
     </main>
 
-    <!-- Minimalist Footer -->
-    <footer class="border-t border-subtle bg-dark-950 py-12">
+    <!-- Footer -->
+    <footer class="border-t border-slate-800/80 bg-dark-950 py-10">
         <div class="max-w-6xl mx-auto px-6 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
             <div class="flex items-center gap-3">
-                <span class="font-serif italic font-bold text-lg text-white">AI GOVERN</span>
+                <span class="font-extrabold text-base text-white">AI GOVERN</span>
                 <span class="text-xs text-slate-500 font-mono">• Sistemas Privados e Infraestructura a Medida</span>
             </div>
             <p class="text-xs text-slate-500 font-mono">
                 © 2026 AI GOVERN. Fundado y dirigido por Barbara Piccolo. Todos los derechos reservados.
             </p>
             <div class="flex items-center gap-6 text-xs font-mono text-slate-400">
-                <a href="#problema" class="hover:text-white transition-colors">El Riesgo</a>
-                <a href="#casos" class="hover:text-white transition-colors">Casos</a>
-                <a href="#metodo" class="hover:text-white transition-colors">Metodología</a>
-                <a href="#agenda" class="hover:text-cyan-400 transition-colors">Agendar</a>
+                <a href="#galaxy-showcase" class="hover:text-cyan-400 transition-colors">Galaxia</a>
+                <a href="#como-funciona" class="hover:text-cyan-400 transition-colors">Método</a>
+                <a href="#sectores" class="hover:text-cyan-400 transition-colors">Sectores</a>
+                <a href="#agenda" class="hover:text-white transition-colors">Agendar</a>
             </div>
         </div>
     </footer>
 
+    <!-- INTERACTIVE GALAXY ENGINE SCRIPT -->
+    <script>
+        const bubbleData = {
+            'lead': {
+                title: 'FASE 1:CRIPT -->
+    <script>
+        const bubbleData = {
+            'lead': {
+                title: 'FASE 1: INGRESO & MAPEO DE FLUJOS',
+                value: 'Valor en Cartera: $241,000 USD (5 Asuntos)',
+                badgeColor: 'bg-purple-500/20 text-purple-300 border-purple-500/40',
+                desc: 'Auditamos cómo trabaja tu equipo día a día y detectamos qué herramientas públicas están usando los colaboradores a espaldas de la dirección (Shadow AI). Identificamos cuellos de botella antes de que cuesten dinero.',
+                infra: 'El análisis de tus procesos se realiza en un entorno privado. Ningún borrador ni dato sensible sale a internet.',
+                impact: '0% Fuga de Información • Diagnóstico Operativo en 72 Horas'
+            },
+            'qualified': {
+                title: 'FASE 2: CALIFICACIÓN & VIABILIDAD',
+                value: 'Valor en Cartera: $331,000 USD (4 Asuntos)',
+                badgeColor: 'bg-blue-500/20 text-blue-300 border-blue-500/40',
+                desc: 'Evaluamos insumos probatorios, correos y minutas de reuniones conflictivas para calificar la vía jurídica y operativa más rápida y menos costosa.',
+                infra: 'Tus precedentes y modelos de negocio se resguardan en servidores propios sin compartir inteligencia con competidores.',
+                impact: 'Estrategias probatorias fundadas en horas, no en semanas.'
+            },
+            'proposal': {
+                title: 'FASE 3: ESTRATEGIA & ENSAMBLAJE NOTARIAL',
+                value: 'Valor en Cartera: $460,000 USD (4 Asuntos)',
+                badgeColor: 'bg-cyan-500/20 text-cyan-300 border-cyan-500/40',
+                desc: 'Generación de contratos mercantiles, actas societarias y documentos corporativos íntegros basados en tus plantillas reales, sin recortes de solemnidad.',
+                infra: 'Desplegado en tu servidor físico o nube privada. Cero dependencia de suscripciones por usuario.',
+                impact: 'Documentos listos para Word (.docx) con 100% validez legal.'
+            },
+            'negotiation': {
+                title: 'FASE 4: NEGOCIACIÓN & REDLINER BLINDADO',
+                value: 'Valor en Negociación: $1,175,000 USD (5 Asuntos)',
+                badgeColor: 'bg-amber-500/20 text-amber-300 border-amber-500/40',
+                desc: 'Cotejamos contratos de contrapartes al instante. Detectamos cláusulas leoninas, renuncias de fueros y penalidades desproporcionadas con semáforo de riesgo.',
+                infra: 'El motor compara contra tus políticas internas sin que la contraparte sepa qué herramientas usas.',
+                impact: 'Ciclos de negociación cerrados en menos de 24 horas.'
+            },
+            'closed-won': {
+                title: 'FASE 5: BLINDAJE CERRADO & OPERACIÓN SEGURA',
+                value: 'Valor Total Asegurado: $1,145,000 USD (5 Asuntos)',
+                badgeColor: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40',
+                desc: 'Acuerdos formalizados, activos comerciales protegidos y sistemas privados operando con autonomía dentro de la empresa.',
+                infra: 'Instalación definitiva llave en mano. Eres dueño absoluto de tu software y bases de datos para siempre.',
+                impact: 'Ahorro masivo en facturación externa y tranquilidad total.'
+            },
+            'closed-lost': {
+                title: 'FASE 6: CONTINGENCIAS PREVENIDAS A TIEMPO',
+                value: 'Riesgo Evitado en Multas: $240,000 USD (5 Asuntos)',
+                badgeColor: 'bg-rose-500/20 text-rose-300 border-rose-500/40',
+                desc: 'Alertas tempranas de plazos fatales, intimaciones y preavisos de prórroga que evitaron penalidades, juicios costosos o caducidades de derechos.',
+                infra: 'Monitoreo perentorio inmutable que protege la responsabilidad de los administradores y directivos.',
+                impact: '0% de pérdidas por preclusión procesal o desorden administrativo.'
+            }
+        };
+
+        function selectBubble(key) {
+            document.querySelectorAll('.galaxy-bubble').forEach(b => {
+                b.classList.remove('active');
+            });
+
+            const selected = document.getElementById('bubble-' + key);
+            if (selected) {
+                selected.classList.add('active');
+            }
+
+            const data = bubbleData[key];
+            if (!data) return;
+
+            const badge = document.getElementById('detail-badge');
+            badge.innerText = data.title;
+            badge.className = 'px-3 py-1 rounded-full text-xs font-mono font-bold uppercase ' + data.badgeColor;
+
+            document.getElementById('detail-value').innerText = data.value;
+            document.getElementById('detail-desc').innerText = data.desc;
+            document.getElementById('detail-infra').innerText = data.infra;
+            document.getElementById('detail-impact').innerText = data.impact;
+        }
+    </script>
 </body>
 </html>
