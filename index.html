@@ -70,7 +70,7 @@
         }
     </style>
     
-    <!-- Script Global Inmediato en Head para Garantizar Ejecución -->
+    <!-- Script Global Inmediato en Head -->
     <script>
         window.showFeature = function(feature) {
             var tabs = ['copiloto', 'analizador', 'calendario', 'societario'];
@@ -345,9 +345,7 @@
             </div>
         </section>
 
-        <!-- ===================================================================== -->
         <!-- 4. CAPACIDADES DEL SISTEMA: SHOWCASE CON GRID SIMÉTRICA DE 4 COLS -->
-        <!-- ===================================================================== -->
         <section id="capacidades" class="max-w-6xl mx-auto px-6 sm:px-8">
             <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
                 <span class="text-cyan-400 font-mono text-xs font-bold uppercase tracking-widest">
@@ -632,7 +630,7 @@
             </div>
         </section>
 
-        <!-- 7. AGENDA & CONTACTO PRIVADO -->
+        <!-- 7. AGENDA & CONTACTO PRIVADO (GOOGLE CALENDAR INTEGRADO) -->
         <section id="agenda" class="max-w-4xl mx-auto px-6 sm:px-8 text-center space-y-8 pb-20">
             
             <div class="space-y-4 max-w-2xl mx-auto">
@@ -645,20 +643,19 @@
                 </h2>
                 
                 <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-                    Reserva una sesión confidencial de 30 minutos. Analizaremos el volumen de tu práctica, tus modelos de confianza y te mostraremos cómo quedaría estructurado tu propio sistema privado.
+                    Reserva una sesión confidencial de 15 a 20 minutos directamente en mi agenda oficial de Google Calendar. Analizaremos tus modelos de confianza y te mostraremos cómo quedaría estructurado tu propio sistema privado.
                 </p>
             </div>
 
-            <!-- Calendly Widget (Clean Dark Embed) -->
+            <!-- Google Calendar Appointment Scheduling Embed -->
             <div class="rounded-3xl border border-slate-800 bg-dark-900 overflow-hidden shadow-2xl p-2 sm:p-4 text-left">
-                <div class="calendly-inline-widget" data-url="https://calendly.com/barbarapiccolo-aigovern/30min?hide_event_type_details=1&hide_gdpr_banner=1&background_color=020612&text_color=f8fafc&primary_color=00f0ff" style="min-width:320px;height:700px;"></div>
-                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                <iframe src="https://calendar.app.google/9ZYVDvdEsF361rKP7" style="border: 0; width: 100%; height: 750px; border-radius: 1rem; background-color: #ffffff;" frameborder="0"></iframe>
             </div>
 
             <div class="pt-4 flex flex-wrap justify-center items-center gap-4 text-xs font-mono">
                 <a href="https://wa.me/584149065797?text=Hola%20Dra.%20Barbara,%20quiero%20agendar%20una%20sesion%20de%20diagnostico%20para%20mi%20despacho" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 hover:bg-emerald-500/30 transition-all font-bold">
                     <i class="fa-brands fa-whatsapp text-sm"></i>
-                    <span>Contactar por WhatsApp Privado </span>
+                    <span>Contactar por WhatsApp Privado (+58 414-9065797)</span>
                 </a>
 
                 <a href="mailto:barbarapiccolo@iagovern.space?subject=Solicitud%20de%20Diagnostico%20Privado%20-%20AI%20GOVERN" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-dark-900 border border-slate-800 text-slate-300 hover:text-white transition-all font-semibold">
@@ -766,8 +763,6 @@
             var tabs = ['copiloto', 'analizador', 'calendario', 'societario'];
             tabs.forEach(function(t) {
                 var el = document.getElementById('btn-' + t);
-                if (el) {
-                    el.addEventListener('click', function(e) {-' + t);
                 if (el) {
                     el.addEventListener('click', function(e) {
                         e.preventDefault();
