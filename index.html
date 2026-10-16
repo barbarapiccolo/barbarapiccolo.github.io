@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI GOVERN | Arquitectura de Inteligencia Jurídica, Secreto Profesional y Gestión de Despachos</title>
-    <meta name="description" content="Sistema Operativo Jurídico Privado creado por la Abg. Barbara Piccolo (INPRE 115.794). Biblioteca conectada de 550 modelos, extracción OCR de recaudos, protocolo Zero-Trust PII y gestión integral de despachos en Latinoamérica.">
+    <title>AI GOVERN | Infraestructura Privada de Inteligencia Artificial Jurídica en tu Propio Servidor</title>
+    <meta name="description" content="Sistema Operativo Jurídico Privado desplegado en el servidor o nube de tu firma. Conectado exclusivamente a tus propios modelos jurídicos y expedientes bajo estricto secreto profesional.">
 
     <!-- Google Fonts: Editorial Serif (Newsreader) + Clean UI Sans (Inter / Plus Jakarta Sans) + Forensic Mono (JetBrains Mono) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,10 +53,28 @@
             background-color: #FAF8F5;
             color: #0F172A;
             transition: background-color 0.25s ease, color 0.25s ease;
+            font-size: clamp(0.9rem, 1vw, 1rem);
         }
         html.dark body {
             background-color: #090D16;
             color: #F1F5F9;
+        }
+        /* Tipografía fluida proporcional a cualquier tamaño de pantalla (Móvil, Tablet y Desktop) */
+        .fluid-h1 {
+            font-size: clamp(1.85rem, 4.5vw + 0.5rem, 3.75rem);
+            line-height: 1.1;
+        }
+        .fluid-h2 {
+            font-size: clamp(1.45rem, 3vw + 0.4rem, 2.5rem);
+            line-height: 1.18;
+        }
+        .fluid-h3 {
+            font-size: clamp(1.15rem, 2vw + 0.3rem, 1.65rem);
+            line-height: 1.25;
+        }
+        .fluid-lead {
+            font-size: clamp(0.95rem, 1.2vw + 0.3rem, 1.15rem);
+            line-height: 1.65;
         }
         .editorial-card {
             background-color: #FFFFFF;
@@ -69,442 +87,462 @@
             border: 1px solid #1E293B;
             box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
         }
-        .paper-sheet {
+        .architecture-box {
             background-color: #FCFBF9;
             border: 1px solid #E2D9C8;
-            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.6), 0 8px 24px rgba(15, 23, 42, 0.05);
         }
-        html.dark .paper-sheet {
+        html.dark .architecture-box {
             background-color: #0B1120;
             border: 1px solid #1E293B;
         }
     </style>
 </head>
-<body class="font-sans antialiased selection:bg-amber-900/15 selection:text-slate-900 min-h-screen flex flex-col">
+<body class="font-sans antialiased selection:bg-amber-900/15 selection:text-slate-900 min-h-screen flex flex-col overflow-x-hidden">
 
-    <!-- Cintillo Institucional de Credenciales y Cumplimiento Deontológico -->
-    <div class="bg-oxford-900 text-ivory-100 border-b border-slate-800 py-2.5 px-4 text-center">
-        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2 text-[11px] font-mono">
-            <div class="flex items-center gap-2 mx-auto sm:mx-0">
-                <span class="inline-block w-2 h-2 rounded-full bg-emerald-400"></span>
-                <span class="font-semibold text-white">PROTOCOLO DE SECRETO PROFESIONAL ZERO-TRUST:</span>
-                <span class="text-slate-300">Anonimización local de datos sensibles con sello SHA-256</span>
+    <!-- Cintillo Institucional de Soberanía y Secreto Profesional -->
+    <div class="bg-oxford-900 text-ivory-100 border-b border-slate-800 py-2 px-4 text-center">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center sm:justify-between gap-2 text-[11px] font-mono">
+            <div class="flex items-center gap-2">
+                <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span class="font-semibold text-white">INFRAESTRUCTURA 100% PRIVADA:</span>
+                <span class="text-slate-300">Desplegado en tu propio servidor o nube • Tus datos jamás salen de tu entorno</span>
             </div>
-            <div class="hidden md:flex items-center gap-4 text-slate-300">
-                <span><i class="fa-solid fa-scale-balanced text-amber-400 mr-1"></i> Dirección Jurídica: Abg. Barbara Piccolo (IPSA 102.485 • INPRE 115.794)</span>
+            <div class="hidden md:flex items-center gap-3 text-slate-300">
+                <span><i class="fa-solid fa-shield-halved text-amber-400 mr-1"></i> Gobernanza de IA y Secreto Fiduciario para Firmas Legales</span>
             </div>
         </div>
     </div>
 
-    <!-- Barra de Navegación Editorial -->
+    <!-- Barra de Navegación Responsiva -->
     <header class="sticky top-0 z-40 bg-ivory-50/95 dark:bg-oxford-950/95 backdrop-blur-md border-b border-ivory-200 dark:border-slate-800 transition-colors">
-        <div class="max-w-7xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between gap-4">
-            <a href="#inicio" class="flex items-center gap-3.5 group">
-                <div class="w-10 h-10 rounded-lg bg-oxford-900 dark:bg-ivory-100 text-ivory-50 dark:text-oxford-900 flex items-center justify-center font-serif font-bold text-lg shadow-sm border border-slate-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 h-16 sm:h-20 flex items-center justify-between gap-3">
+            <a href="#inicio" class="flex items-center gap-3 group shrink-0">
+                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-oxford-900 dark:bg-ivory-100 text-ivory-50 dark:text-oxford-900 flex items-center justify-center font-serif font-bold text-base sm:text-lg shadow-sm border border-slate-700">
                     AG
                 </div>
                 <div class="flex flex-col">
                     <div class="flex items-center gap-2">
-                        <span class="font-serif font-bold text-xl tracking-tight text-oxford-900 dark:text-white">AI GOVERN</span>
-                        <span class="text-[10px] font-mono uppercase tracking-widest px-2 py-0.5 rounded bg-bronze-100 dark:bg-slate-800 text-bronze-600 dark:text-amber-300 border border-bronze-500/30 font-semibold">Legal OS</span>
+                        <span class="font-serif font-bold text-lg sm:text-xl tracking-tight text-oxford-900 dark:text-white">AI GOVERN</span>
+                        <span class="text-[9px] sm:text-[10px] font-mono uppercase tracking-widest px-1.5 py-0.5 rounded bg-bronze-100 dark:bg-slate-800 text-bronze-600 dark:text-amber-300 border border-bronze-500/30 font-semibold">Private OS</span>
                     </div>
-                    <span class="text-[10px] font-mono text-slate-500 dark:text-slate-400 tracking-wide">POR BARBARA PICCOLO • FIRMAS & DEPARTAMENTOS LEGALES</span>
+                    <span class="text-[9px] sm:text-[10px] font-mono text-slate-500 dark:text-slate-400 tracking-wide">ARQUITECTURA LEGAL SOBERANA</span>
                 </div>
             </a>
 
-            <nav class="hidden lg:flex items-center gap-7 text-xs font-medium text-slate-700 dark:text-slate-300">
-                <a href="#demostracion" class="hover:text-bronze-600 dark:hover:text-amber-300 transition-colors">Demostración en Vivo</a>
-                <a href="#zero-trust" class="hover:text-bronze-600 dark:hover:text-amber-300 transition-colors">Seguridad Zero-Trust</a>
-                <a href="#biblioteca" class="hover:text-bronze-600 dark:hover:text-amber-300 transition-colors">Biblioteca 550 Modelos</a>
-                <a href="#comparativa" class="hover:text-bronze-600 dark:hover:text-amber-300 transition-colors">Inversión & ROI</a>
-                <a href="#direccion" class="hover:text-bronze-600 dark:hover:text-amber-300 transition-colors">Dirección Letrada</a>
-                <a href="#agenda" class="hover:text-bronze-600 dark:hover:text-amber-300 transition-colors">Agendar</a>
+            <!-- Enlaces Escritorio -->
+            <nav class="hidden lg:flex items-center gap-6 text-xs font-medium text-slate-700 dark:text-slate-300">
+                <a href="#soberania" class="hover:text-bronze-600 dark:hover:text-amber-300 transition-colors">Tu Nube & Tus Modelos</a>
+                <a href="#el-riesgo" class="hover:text-bronze-600 dark:hover:text-amber-300 transition-colors">Riesgo Deontológico</a>
+                <a href="#capacidades" class="hover:text-bronze-600 dark:hover:text-amber-300 transition-colors">Módulos Privados</a>
+                <a href="#metodo" class="hover:text-bronze-600 dark:hover:text-amber-300 transition-colors">Implementación</a>
+                <a href="#comparativa" class="hover:text-bronze-600 dark:hover:text-amber-300 transition-colors">Comparativa</a>
+                <a href="#agenda" class="hover:text-bronze-600 dark:hover:text-amber-300 transition-colors">Agendar Diagnóstico</a>
             </nav>
 
-            <div class="flex items-center gap-2.5">
-                <button type="button" id="themeToggleBtn" class="p-2.5 rounded-lg border border-ivory-200 dark:border-slate-800 text-slate-700 dark:text-amber-300 hover:bg-ivory-100 dark:hover:bg-slate-900 text-xs cursor-pointer transition" title="Alternar Modo Editorial Claro / Modo Nocturno">
+            <!-- Botones de Acción y Menú Móvil -->
+            <div class="flex items-center gap-2">
+                <button type="button" id="themeToggleBtn" class="p-2 sm:p-2.5 rounded-lg border border-ivory-200 dark:border-slate-800 text-slate-700 dark:text-amber-300 hover:bg-ivory-100 dark:hover:bg-slate-900 text-xs cursor-pointer transition" title="Alternar Modo Claro / Nocturno">
                     <i id="themeIcon" class="fa-solid fa-moon"></i>
                 </button>
-                <a href="https://ai-govern-three.vercel.app/" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-oxford-900/20 dark:border-slate-700 text-oxford-900 dark:text-white hover:bg-ivory-100 dark:hover:bg-slate-800 font-semibold text-xs transition">
-                    <i class="fa-solid fa-arrow-up-right-from-square text-[11px] text-bronze-500"></i>
-                    <span>Abrir Consola Web</span>
-                </a>
-                <button type="button" id="navCtaBtn" class="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-lg bg-oxford-900 hover:bg-oxford-800 dark:bg-amber-500 dark:hover:bg-amber-400 text-white dark:text-slate-950 font-semibold text-xs transition shadow-sm cursor-pointer">
-                    <i class="fa-solid fa-lock text-[11px]"></i>
-                    <span>Solicitar Acceso</span>
+                <button type="button" id="navCtaBtn" class="inline-flex items-center gap-2 px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-lg bg-oxford-900 hover:bg-oxford-800 dark:bg-amber-500 dark:hover:bg-amber-400 text-white dark:text-slate-950 font-semibold text-xs transition shadow-sm cursor-pointer">
+                    <i class="fa-solid fa-lock text-[10px]"></i>
+                    <span>Solicitar Demo Privada</span>
+                </button>
+                <button type="button" id="mobileMenuBtn" class="lg:hidden p-2 rounded-lg border border-ivory-200 dark:border-slate-800 text-oxford-900 dark:text-white cursor-pointer" title="Abrir menú">
+                    <i class="fa-solid fa-bars text-sm"></i>
                 </button>
             </div>
         </div>
+
+        <!-- Menú Desplegable para Teléfonos Móviles -->
+        <div id="mobileNavDrawer" class="hidden lg:hidden border-t border-ivory-200 dark:border-slate-800 bg-ivory-50 dark:bg-oxford-950 px-4 py-4 space-y-2 text-xs font-medium">
+            <a href="#soberania" class="mobile-nav-link block py-2 px-3 rounded-lg hover:bg-ivory-100 dark:hover:bg-slate-900">1. Tu Propia Nube y Tus Modelos Jurídicos</a>
+            <a href="#el-riesgo" class="mobile-nav-link block py-2 px-3 rounded-lg hover:bg-ivory-100 dark:hover:bg-slate-900">2. El Riesgo del Shadow AI Público</a>
+            <a href="#capacidades" class="mobile-nav-link block py-2 px-3 rounded-lg hover:bg-ivory-100 dark:hover:bg-slate-900">3. Módulos del Sistema</a>
+            <a href="#metodo" class="mobile-nav-link block py-2 px-3 rounded-lg hover:bg-ivory-100 dark:hover:bg-slate-900">4. Implementación Llave en Mano</a>
+            <a href="#comparativa" class="mobile-nav-link block py-2 px-3 rounded-lg hover:bg-ivory-100 dark:hover:bg-slate-900">5. Comparativa de Mercado</a>
+            <a href="#agenda" class="mobile-nav-link block py-2 px-3 rounded-lg bg-bronze-100/70 dark:bg-slate-900 text-bronze-600 dark:text-amber-300 font-bold">6. Agendar Sesión en Calendario Oficial</a>
+        </div>
     </header>
 
-    <main id="inicio" class="flex-1 space-y-24 sm:space-y-32 pt-10 sm:pt-16 pb-20">
+    <main id="inicio" class="flex-1 space-y-16 sm:space-y-28 pt-8 sm:pt-16 pb-16">
 
-        <!-- 1. HERO EDITORIAL DE ALTA CONFIANZA -->
-        <section class="max-w-7xl mx-auto px-4 sm:px-8">
-            <div class="text-center max-w-4xl mx-auto space-y-6">
-                <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-ivory-100 dark:bg-slate-900 border border-ivory-300 dark:border-slate-800 text-xs font-mono text-bronze-600 dark:text-amber-300">
-                    <i class="fa-solid fa-shield-halved"></i>
-                    <span>ARQUITECTURA DE INTELIGENCIA JURÍDICA Y SECRETO PROFESIONAL</span>
+        <!-- 1. HERO PRINCIPAL: ÉNFASIS EN SERVIDOR PROPIO Y MODELOS PROPIOS -->
+        <section class="max-w-6xl mx-auto px-4 sm:px-8 text-center">
+            <div class="space-y-6 max-w-4xl mx-auto">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-ivory-100 dark:bg-slate-900 border border-ivory-300 dark:border-slate-800 text-[11px] font-mono text-bronze-600 dark:text-amber-300">
+                    <i class="fa-solid fa-server"></i>
+                    <span>INFRAESTRUCTURA SOBERANA PARA DESPACHOS Y DEPARTAMENTOS LEGALES</span>
                 </div>
 
-                <h1 class="text-4xl sm:text-6xl lg:text-[64px] font-serif font-medium text-oxford-900 dark:text-white tracking-tight leading-[1.08]">
-                    El rigor de tu firma jurídica,<br class="hidden sm:inline">
-                    <span class="italic font-normal text-bronze-600 dark:text-amber-300">protegido en tu propia infraestructura.</span>
+                <h1 class="fluid-h1 font-serif font-medium text-oxford-900 dark:text-white tracking-tight">
+                    Tu propia Inteligencia Artificial Jurídica, <br class="hidden sm:inline">
+                    <span class="italic font-normal text-bronze-600 dark:text-amber-300">conectada a tus modelos y dentro de tu servidor.</span>
                 </h1>
 
-                <p class="max-w-3xl mx-auto text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-                    Una consola integral diseñada por abogados corporativos y litigantes para transformar recaudos fotográficos y notas de voz en <strong>instrumentos jurídicos visados en 30 segundos</strong>, conectada a tu propia biblioteca de <strong>550 modelos</strong> y blindada con anonimización <strong>Zero-Trust PII</strong> antes de consultar cualquier modelo de IA.
+                <p class="fluid-lead max-w-3xl mx-auto text-slate-600 dark:text-slate-300">
+                    Desplegamos un <strong>Sistema Operativo Jurídico Privado</strong> directamente en la nube o servidor de tu firma. Se conecta de forma exclusiva a <strong>tu propia biblioteca de contratos, escritos y precedentes</strong>, garantizando que ningún documento, expediente o dato sensible de tus clientes salga jamás de tu perímetro de confidencialidad.
                 </p>
 
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-2">
-                    <a href="https://ai-govern-three.vercel.app/" target="_blank" rel="noopener" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-7 py-4 rounded-xl bg-oxford-900 hover:bg-oxford-800 dark:bg-amber-500 dark:hover:bg-amber-400 text-white dark:text-slate-950 font-semibold text-sm transition shadow-md">
-                        <i class="fa-solid fa-play text-xs"></i>
-                        <span>Entrar a la Consola Interactiva en Vivo</span>
-                    </a>
-                    <a href="#agenda" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl bg-white dark:bg-slate-900 border border-ivory-300 dark:border-slate-700 hover:border-oxford-900 text-oxford-900 dark:text-white font-semibold text-sm transition">
+                <!-- Dos Pilares de Soberanía en el Hero -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left max-w-3xl mx-auto pt-2">
+                    <div class="editorial-card p-5 rounded-2xl space-y-1.5 border-l-4 border-l-oxford-900 dark:border-l-amber-400">
+                        <div class="flex items-center gap-2 text-xs font-mono font-bold uppercase text-oxford-900 dark:text-amber-300">
+                            <i class="fa-solid fa-folder-tree text-bronze-600"></i>
+                            <span>1. Conectado a Tus Propios Modelos</span>
+                        </div>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                            No redacta con formatos genéricos de internet. Indexa de forma privada las minutas, contratos y demandas que tu firma ha perfeccionado durante años para redactar exactamente con tu estilo y técnica legal.
+                        </p>
+                    </div>
+
+                    <div class="editorial-card p-5 rounded-2xl space-y-1.5 border-l-4 border-l-emerald-700">
+                        <div class="flex items-center gap-2 text-xs font-mono font-bold uppercase text-emerald-800 dark:text-emerald-400">
+                            <i class="fa-solid fa-shield-lock text-emerald-600"></i>
+                            <span>2. Desplegado en Tu Nube o Servidor</span>
+                        </div>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                            Instalación aislada en tu infraestructura (On-Premise o nube privada VPC) con filtro Zero-Trust PII en memoria. Cero fugas de información, cero entrenamiento de terceros y secreto profesional intacto.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Botones Principales (Con Filtro de Acreditación / Agenda) -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-4">
+                    <button type="button" id="heroDemoBtn" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-7 py-4 rounded-xl bg-oxford-900 hover:bg-oxford-800 dark:bg-amber-500 dark:hover:bg-amber-400 text-white dark:text-slate-950 font-semibold text-xs sm:text-sm transition shadow-md cursor-pointer">
+                        <i class="fa-solid fa-user-check text-xs"></i>
+                        <span>Solicitar Demostración Guiada (Acceso Protegido)</span>
+                    </button>
+                    <a href="#agenda" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl bg-white dark:bg-slate-900 border border-ivory-300 dark:border-slate-700 hover:border-oxford-900 text-oxford-900 dark:text-white font-semibold text-xs sm:text-sm transition">
                         <i class="fa-regular fa-calendar-check text-bronze-600 dark:text-amber-400"></i>
-                        <span>Agendar Diagnóstico con la Dra. Piccolo (15 min)</span>
+                        <span>Agendar Diagnóstico Confidencial (15 min)</span>
                     </a>
                 </div>
 
-                <!-- Sellos de Confianza Verificables -->
-                <div class="pt-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-mono text-slate-600 dark:text-slate-400">
-                    <span><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i>550 Modelos Jurídicos Conectados</span>
-                    <span><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i>Extractor OCR de Cédulas y RIF</span>
-                    <span><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i>Cómputo de Días de Despacho (CPC)</span>
-                    <span><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i>Cero Entrenamiento con Datos de Clientes</span>
-                </div>
-            </div>
-
-            <!-- 2. DEMOSTRACIÓN INTERACTIVA EN VIVO (SIN BLOQUEOS) -->
-            <div id="demostracion" class="mt-12 sm:mt-16 editorial-card rounded-2xl overflow-hidden border border-ivory-300 dark:border-slate-800">
-                <!-- Barra Superior de Ventana Institucional -->
-                <div class="bg-oxford-900 text-white px-4 sm:px-6 py-3.5 flex flex-wrap items-center justify-between gap-3 border-b border-slate-800">
-                    <div class="flex items-center gap-3">
-                        <div class="flex items-center gap-1.5">
-                            <span class="w-2.5 h-2.5 rounded-full bg-rose-400/80"></span>
-                            <span class="w-2.5 h-2.5 rounded-full bg-amber-400/80"></span>
-                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400/80"></span>
-                        </div>
-                        <span class="text-xs font-mono text-slate-300">CONSOLA AI GOVERN v5.6 • VISTA PREVIA INTERACTIVA PARA COLEGAS</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <span class="px-2.5 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-[10px] font-mono">
-                            <i class="fa-solid fa-shield-check mr-1"></i>Zero-Trust PII Verificado (SHA-256)
-                        </span>
-                    </div>
-                </div>
-
-                <!-- Pestañas de los 4 Flujos Reales del Sistema -->
-                <div class="bg-ivory-100 dark:bg-slate-900/90 border-b border-ivory-200 dark:border-slate-800 p-2">
-                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-2">
-                        <button type="button" data-tab="redactor" class="showcase-tab py-3 px-4 rounded-xl font-semibold text-xs flex items-center justify-center gap-2 bg-oxford-900 text-white shadow-sm cursor-pointer transition">
-                            <i class="fa-solid fa-file-signature text-amber-400"></i>
-                            <span>1. Recaudos OCR → 550 Modelos</span>
-                        </button>
-                        <button type="button" data-tab="whatsapp" class="showcase-tab py-3 px-4 rounded-xl font-semibold text-xs flex items-center justify-center gap-2 bg-transparent text-slate-700 dark:text-slate-300 hover:bg-white/60 dark:hover:bg-slate-800 cursor-pointer transition">
-                            <i class="fa-brands fa-whatsapp text-emerald-600"></i>
-                            <span>2. Capturas & Audio WhatsApp</span>
-                        </button>
-                        <button type="button" data-tab="sparring" class="showcase-tab py-3 px-4 rounded-xl font-semibold text-xs flex items-center justify-center gap-2 bg-transparent text-slate-700 dark:text-slate-300 hover:bg-white/60 dark:hover:bg-slate-800 cursor-pointer transition">
-                            <i class="fa-solid fa-scale-balanced text-bronze-600"></i>
-                            <span>3. Consultor & Excepciones CPC</span>
-                        </button>
-                        <button type="button" data-tab="despacho" class="showcase-tab py-3 px-4 rounded-xl font-semibold text-xs flex items-center justify-center gap-2 bg-transparent text-slate-700 dark:text-slate-300 hover:bg-white/60 dark:hover:bg-slate-800 cursor-pointer transition">
-                            <i class="fa-solid fa-chart-pie text-indigo-600"></i>
-                            <span>4. Kanban, Agenda CPC & FinOps</span>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Contenido Dinámico de la Vista Previa -->
-                <div class="p-6 sm:p-10 bg-white dark:bg-oxford-900">
-
-                    <!-- PANEL 1: RECAUDOS OCR -> 550 MODELOS (Por defecto) -->
-                    <div id="panel-redactor" class="showcase-panel grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                        <div class="lg:col-span-5 space-y-5">
-                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-bronze-100 dark:bg-slate-800 text-bronze-600 dark:text-amber-300 font-mono text-[11px] font-semibold">
-                                FLUJO DE REDACCIÓN EN 30 SEGUNDOS
-                            </div>
-                            <h3 class="text-2xl font-serif font-semibold text-oxford-900 dark:text-white leading-snug">
-                                De fotos de Cédula y RIF por WhatsApp a documento visado listo para Registro o Notaría.
-                            </h3>
-                            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                                Selecciona un instrumento de prueba abajo para ver cómo el sistema extrae las partes desde las fotos del cliente y ensambla el documento con formato de papel sellado:
-                            </p>
-
-                            <!-- Selector Interactivo de Modelo en Vivo -->
-                            <div class="space-y-2">
-                                <label class="block text-[11px] font-mono uppercase text-slate-500 font-semibold">Prueba un modelo real del catálogo (550 disponibles):</label>
-                                <div class="grid grid-cols-1 gap-2">
-                                    <button type="button" data-doc="compraventa" class="doc-preset-btn text-left p-3 rounded-xl border border-oxford-900 bg-ivory-50 dark:bg-slate-800/90 text-xs font-medium flex items-center justify-between cursor-pointer transition">
-                                        <div>
-                                            <span class="font-mono font-bold text-bronze-600 dark:text-amber-400 mr-2">[CIV-104]</span>
-                                            <span class="font-semibold text-oxford-900 dark:text-white">Compraventa de Inmueble con Reserva de Dominio</span>
-                                        </div>
-                                        <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
-                                    </button>
-                                    <button type="button" data-doc="poder" class="doc-preset-btn text-left p-3 rounded-xl border border-ivory-200 dark:border-slate-800 hover:border-slate-400 text-xs font-medium flex items-center justify-between cursor-pointer transition">
-                                        <div>
-                                            <span class="font-mono font-bold text-bronze-600 dark:text-amber-400 mr-2">[POD-01]</span>
-                                            <span class="font-semibold text-oxford-900 dark:text-white">Poder General de Administración y Disposición</span>
-                                        </div>
-                                        <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
-                                    </button>
-                                    <button type="button" data-doc="acta" class="doc-preset-btn text-left p-3 rounded-xl border border-ivory-200 dark:border-slate-800 hover:border-slate-400 text-xs font-medium flex items-center justify-between cursor-pointer transition">
-                                        <div>
-                                            <span class="font-mono font-bold text-bronze-600 dark:text-amber-400 mr-2">[MER-12]</span>
-                                            <span class="font-semibold text-oxford-900 dark:text-white">Acta de Asamblea Extraordinaria de Accionistas</span>
-                                        </div>
-                                        <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div class="p-3.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800/60 text-xs text-emerald-900 dark:text-emerald-200 flex items-start gap-2.5">
-                                <i class="fa-solid fa-file-word text-emerald-600 mt-0.5"></i>
-                                <span><strong>Clonador .DOCX Nativo:</strong> También puedes subir cualquier contrato Word de tu despacho para que la IA conserve exactamente tu estilo de redacción.</span>
-                            </div>
-                        </div>
-
-                        <!-- Hoja de Papel Jurídico Realista -->
-                        <div class="lg:col-span-7 paper-sheet rounded-2xl p-6 sm:p-8 space-y-4">
-                            <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-ivory-200 dark:border-slate-800">
-                                <div class="text-[11px] font-mono text-slate-500 dark:text-slate-400">
-                                    <i class="fa-solid fa-stamp text-bronze-500 mr-1"></i>
-                                    <span id="docPreviewCode">INSTRUMENTO: CIV-104 • FORMATO REGISTRO / NOTARÍA</span>
-                                </div>
-                                <span class="px-2.5 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 font-mono text-[10px] font-semibold">
-                                    Visado Profesional Incluido
-                                </span>
-                            </div>
-
-                            <div class="text-right font-serif text-[11px] text-slate-600 dark:text-slate-400 border-b border-dashed border-ivory-200 dark:border-slate-800 pb-2">
-                                <strong>VISADO PROFESIONAL: ABG. BARBARA ISABEL PICCOLO OBALDO</strong><br>
-                                Inscrita en el IPSA N° 102.485 • INPREABOGADO N° 115.794
-                            </div>
-
-                            <div id="docPreviewBody" class="font-serif text-xs sm:text-sm text-slate-800 dark:text-slate-200 leading-relaxed space-y-3 text-justify">
-                                <p><strong>DOCUMENTO DE COMPRAVENTA INMOBILIARIA CON RESERVA DE TRADICIÓN:</strong></p>
-                                <p>Yo, <strong>ELBA JOSEFINA GUILLÉN RODRÍGUEZ</strong>, venezolana, mayor de edad, soltera, domiciliada en Turmero, Estado Aragua y titular de la Cédula de Identidad N° <strong>V-2.991.032</strong> (RIF: <strong>V029910320</strong>), declaro: Doy en venta pura y simple, perfecta e irrevocable a la ciudadana <strong>ANA BIANCA REYES BONILLA</strong>, titular de la Cédula de Identidad N° <strong>V-6.055.603</strong> (RIF: <strong>V060556031</strong>), un inmueble constituido por la Parcela C-13, Urbanización Las Cayenas, Código Catastral <strong>05-11-04-U08-091-003-009</strong>.</p>
-                                <p><strong>CLÁUSULA SEGUNDA (DEL PRECIO Y RESERVA LEGAL):</strong> El precio convenido es la cantidad de <strong>10.000.000,00 Bs</strong>, pagaderos mediante Cheque de Gerencia N° 01002663 del Banco de Venezuela, quedando supeditada la tradición legal a la efectiva compensación bancaria conforme a los artículos 1.474 y 1.488 del Código Civil.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- PANEL 2: CAPTURAS Y NOTAS DE VOZ WHATSAPP -->
-                    <div id="panel-whatsapp" class="showcase-panel hidden grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                        <div class="lg:col-span-5 space-y-4">
-                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-100 dark:bg-slate-800 text-emerald-800 dark:text-emerald-300 font-mono text-[11px] font-semibold">
-                                ATENCIÓN EJECUTIVA A CLIENTES POR WHATSAPP
-                            </div>
-                            <h3 class="text-2xl font-serif font-semibold text-oxford-900 dark:text-white">
-                                Sube la captura de pantalla o la nota de voz (.ogg / .mp3) de tu cliente y obtén la respuesta jurídica exacta.
-                            </h3>
-                            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                                En la práctica real, los clientes envían dudas por notas de voz o capturas de WhatsApp fuera de horario. Elige el tono de respuesta para ver cómo lo redacta el sistema:
-                            </p>
-                            <div class="grid grid-cols-2 gap-2 pt-1">
-                                <button type="button" data-tone="cercano" class="tone-btn p-2.5 rounded-xl border border-oxford-900 bg-oxford-900 text-white text-xs font-semibold cursor-pointer">Tono Cercano / Cliente</button>
-                                <button type="button" data-tone="cobro" class="tone-btn p-2.5 rounded-xl border border-ivory-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-xs font-semibold cursor-pointer">Tono Cobro de Honorarios</button>
-                                <button type="button" data-tone="formal" class="tone-btn p-2.5 rounded-xl border border-ivory-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-xs font-semibold cursor-pointer">Tono Formal / Registro</button>
-                                <button type="button" data-tone="didactico" class="tone-btn p-2.5 rounded-xl border border-ivory-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-xs font-semibold cursor-pointer">Explicación Sencilla</button>
-                            </div>
-                        </div>
-                        <div class="lg:col-span-7 paper-sheet rounded-2xl p-6 space-y-4">
-                            <div class="p-3.5 rounded-xl bg-ivory-100 dark:bg-slate-900 border border-ivory-200 dark:border-slate-800 text-xs space-y-1">
-                                <span class="font-mono text-[10px] text-slate-500 uppercase font-bold block">Entrada Recibida (Nota de voz de WhatsApp 0:42s + Captura):</span>
-                                <p class="text-slate-700 dark:text-slate-300 italic">"Doctora Bárbara, le mandé la foto de la cédula de mi hermana y la planilla sucesoral, ¿con eso ya podemos firmar el martes en la Notaría o falta algo? ¿Cuánto serían sus honorarios?"</p>
-                            </div>
-                            <div class="p-4 rounded-xl bg-emerald-50/70 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-800/50 space-y-2">
-                                <div class="flex items-center justify-between">
-                                    <span class="font-mono text-[10px] text-emerald-800 dark:text-emerald-300 uppercase font-bold">Respuesta Lista para Enviar en 1 Clic:</span>
-                                    <span class="text-[10px] font-mono text-emerald-700 dark:text-emerald-400"><i class="fa-brands fa-whatsapp mr-1"></i>Enlace directo wa.me</span>
-                                </div>
-                                <p id="whatsappPreviewText" class="text-xs sm:text-sm text-slate-800 dark:text-slate-100 leading-relaxed">
-                                    ¡Hola! Espero que estés muy bien. Ya revisé con detalle la cédula y la planilla sucesoral que me enviaste; los datos están completos y sirven perfectamente para el otorgamiento. Solo nos falta anexar el RIF actualizado para dejar el documento definitivo impreso con mi firma y visado INPRE N° 115.794. Te envío por aquí el detalle de los honorarios profesionales para agendar la firma este mismo martes. ¡Un abrazo!
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- PANEL 3: CONSULTOR & SPARRING PROCESAL -->
-                    <div id="panel-sparring" class="showcase-panel hidden grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                        <div class="lg:col-span-5 space-y-4">
-                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-bronze-100 dark:bg-slate-800 text-bronze-600 dark:text-amber-300 font-mono text-[11px] font-semibold">
-                                AUDITORÍA FORENSE & CUESTIONES PREVIAS (ART. 346 CPC)
-                            </div>
-                            <h3 class="text-2xl font-serif font-semibold text-oxford-900 dark:text-white">
-                                Audita contratos de la contraparte y detecta excepciones procesales antes de ir a audiencia.
-                            </h3>
-                            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                                Adjunta cualquier archivo <code>.docx</code> o <code>.pdf</code> en el Consultor IA, dicta por micrófono y transfiere la estrategia directamente al Redactor de Instrumentos en un clic.
-                            </p>
-                        </div>
-                        <div class="lg:col-span-7 paper-sheet rounded-2xl p-6 space-y-3 text-xs">
-                            <div class="p-3.5 rounded-xl bg-rose-50 dark:bg-rose-950/30 border border-rose-200 dark:border-rose-800/50 space-y-1">
-                                <span class="font-mono text-[10px] text-rose-700 dark:text-rose-300 font-bold uppercase">⚠️ Cláusula de Riesgo Detectada en Borrador de Contraparte:</span>
-                                <p class="text-slate-700 dark:text-slate-300">La arrendadora pretende retener unilateralmente tres (3) montacargas industriales sin orden judicial y omite descontar 15.000 USD en mejoras estructurales autorizadas.</p>
-                            </div>
-                            <div class="p-3.5 rounded-xl bg-ivory-100 dark:bg-slate-900 border border-ivory-200 dark:border-slate-800 space-y-1.5">
-                                <span class="font-mono text-[10px] text-oxford-900 dark:text-amber-300 font-bold uppercase">✓ Dictamen y Redline Sugerido por AI GOVERN:</span>
-                                <p class="text-slate-700 dark:text-slate-200">1. Oponer prohibición de hacerse justicia por propia mano y prohibición de vías de hecho conforme a doctrina reiterada de Casación Civil.</p>
-                                <p class="text-slate-700 dark:text-slate-200">2. Generar anexo transaccional compensando el 50% del canon mensual hasta extinguir el saldo líquido de 15.000 USD.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- PANEL 4: GESTIÓN INTEGRAL DEL DESPACHO -->
-                    <div id="panel-despacho" class="showcase-panel hidden grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                        <div class="lg:col-span-5 space-y-4">
-                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-indigo-50 dark:bg-slate-800 text-indigo-800 dark:text-indigo-300 font-mono text-[11px] font-semibold">
-                                DIRECCIÓN GENERAL COUNSEL & DESPACHO EXTERNO
-                            </div>
-                            <h3 class="text-2xl font-serif font-semibold text-oxford-900 dark:text-white">
-                                Tablero Kanban, CRM Societario, Grabador de Sala y Métricas FinOps en tiempo real.
-                            </h3>
-                            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                                Graba la reunión con el cliente en sala, genera la minuta certificada con sello SHA-256, envía las tareas al Planificador Kanban con un clic y descarga el <strong>Informe Ejecutivo Semanal (.doc)</strong> para la Junta Directiva.
-                            </p>
-                        </div>
-                        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-                            <div class="paper-sheet p-4 rounded-xl space-y-1.5">
-                                <span class="text-[10px] font-mono text-slate-500 uppercase">Valor Económico Desbloqueado</span>
-                                <div class="text-2xl font-serif font-bold text-emerald-700 dark:text-emerald-400">148.000 USD</div>
-                                <p class="text-[11px] text-slate-600 dark:text-slate-400">Calculado en vivo según la cuantía de tus expedientes activos en el Planificador.</p>
-                            </div>
-                            <div class="paper-sheet p-4 rounded-xl space-y-1.5">
-                                <span class="text-[10px] font-mono text-slate-500 uppercase">Reducción de Ciclo Contractual</span>
-                                <div class="text-2xl font-serif font-bold text-oxford-900 dark:text-white">De 5 días a 18 h</div>
-                                <p class="text-[11px] text-slate-600 dark:text-slate-400">82% de ahorro en transcripción de recaudos y armado de instrumentos.</p>
-                            </div>
-                            <div class="paper-sheet p-4 rounded-xl space-y-1.5 sm:col-span-2">
-                                <span class="text-[10px] font-mono text-bronze-600 dark:text-amber-300 uppercase font-bold">Calendario Procesal (Art. 197 CPC) + Exportación .ICS:</span>
-                                <p class="text-slate-700 dark:text-slate-300">Distingue automáticamente entre días continuos y días de despacho efectivo, sincronizando audiencias y vencimientos fatales con el teléfono móvil de cada abogado.</p>
-                            </div>
-                        </div>
-                    </div>
-
+                <div class="pt-2 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-[11px] font-mono text-slate-500 dark:text-slate-400">
+                    <span><i class="fa-solid fa-lock text-emerald-600 mr-1"></i>Entorno Cerrado y Auditado</span>
+                    <span>•</span>
+                    <span><i class="fa-solid fa-database text-bronze-600 mr-1"></i>Soberanía Total del Dato</span>
+                    <span>•</span>
+                    <span><i class="fa-solid fa-scale-balanced text-bronze-600 mr-1"></i>Calibrado para tu Jurisdicción</span>
                 </div>
             </div>
         </section>
 
-        <!-- 3. SIMULADOR INTERACTIVO DE PRIVACIDAD ZERO-TRUST PII -->
-        <section id="zero-trust" class="max-w-6xl mx-auto px-4 sm:px-8">
-            <div class="editorial-card rounded-3xl p-8 sm:p-12 space-y-8">
+        <!-- 2. ARQUITECTURA DE SOBERANÍA: CÓMO FUNCIONA DENTRO DE TU ENTORN0 -->
+        <section id="soberania" class="max-w-6xl mx-auto px-4 sm:px-8">
+            <div class="editorial-card rounded-3xl p-6 sm:p-12 space-y-10">
                 <div class="max-w-3xl space-y-3">
-                    <span class="text-xs font-mono uppercase tracking-widest text-emerald-700 dark:text-emerald-400 font-bold">
-                        <i class="fa-solid fa-user-shield mr-1"></i> Demostración Técnica de Confidencialidad
+                    <span class="text-xs font-mono uppercase tracking-widest text-bronze-600 dark:text-amber-300 font-bold">
+                        Arquitectura de Perímetro Cerrado
                     </span>
-                    <h2 class="text-3xl sm:text-4xl font-serif font-semibold text-oxford-900 dark:text-white">
-                        Comprueba cómo protegemos el Secreto Profesional antes de que cualquier dato salga de tu despacho
+                    <h2 class="fluid-h2 font-serif font-semibold text-oxford-900 dark:text-white">
+                        Tu conocimiento jurídico permanece bajo tu llave, nunca en una nube pública compartida
                     </h2>
-                    <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                        A diferencia de pegar un contrato en un ChatGPT público —donde expones nombres, cédulas, RIFs y montos de tus clientes—, AI GOVERN intercepta y reemplaza automáticamente las entidades sensibles en la memoria local de tu navegador:
+                    <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                        A diferencia de las plataformas comerciales donde subes los contratos de tus clientes a servidores externos fuera de tu control, AI GOVERN opera bajo un esquema de <strong>aislamiento técnico estricto</strong>:
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
-                    <div class="space-y-2 flex flex-col">
-                        <label for="piiInputDemo" class="text-xs font-mono font-bold uppercase text-slate-600 dark:text-slate-300">
-                            1. Escribe o edita aquí un texto real con Cédulas, RIF o Montos:
-                        </label>
-                        <textarea id="piiInputDemo" rows="4" class="w-full flex-1 p-4 rounded-xl bg-ivory-50 dark:bg-slate-950 border border-ivory-300 dark:border-slate-800 text-xs sm:text-sm font-mono text-oxford-900 dark:text-slate-200 focus:outline-none focus:border-oxford-900">La sociedad Machtig Rothe, C.A. (RIF J-31294850-2), representada por Carlos Mendoza, titular de la Cédula V-14.892.103, acuerda compensar 15.000 USD por mejoras estructurales. Contacto: gerencia@machtig.com</textarea>
+                <!-- Diagrama Arquitectónico Visual en 3 Capas -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                    <div class="architecture-box p-6 rounded-2xl space-y-3 relative">
+                        <div class="flex items-center justify-between">
+                            <span class="px-2.5 py-1 rounded bg-oxford-900 text-white font-mono text-[10px] font-bold">CAPA 1 • TU ACERVO</span>
+                            <i class="fa-solid fa-folder-closed text-bronze-600 text-lg"></i>
+                        </div>
+                        <h3 class="font-serif font-semibold text-base sm:text-lg text-oxford-900 dark:text-white">
+                            Conexión Directa a Tu Biblioteca de Modelos
+                        </h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                            El sistema se enlaza con tus carpetas privadas (Google Drive corporativo, SharePoint o servidor local) donde reposan tus modelos de contratos, poderes, actas y escritos judiciales.
+                        </p>
                     </div>
 
-                    <div class="p-5 rounded-xl bg-oxford-900 text-white space-y-3 flex flex-col justify-between">
-                        <div class="space-y-2">
-                            <div class="flex items-center justify-between text-[11px] font-mono text-emerald-400 border-b border-slate-800 pb-2">
-                                <span>2. PAYLOAD ANONIMIZADO QUE VIAJA AL MOTOR IA:</span>
-                                <span id="piiCountBadge" class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300">4 Entidades Blindadas</span>
-                            </div>
-                            <p id="piiOutputDemo" class="font-mono text-xs text-slate-200 leading-relaxed break-words"></p>
+                    <div class="architecture-box p-6 rounded-2xl space-y-3 relative">
+                        <div class="flex items-center justify-between">
+                            <span class="px-2.5 py-1 rounded bg-emerald-800 text-white font-mono text-[10px] font-bold">CAPA 2 • ADUANA LOCAL</span>
+                            <i class="fa-solid fa-user-shield text-emerald-600 text-lg"></i>
                         </div>
-                        <div id="piiTokensList" class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800"></div>
+                        <h3 class="font-serif font-semibold text-base sm:text-lg text-oxford-900 dark:text-white">
+                            Filtro Zero-Trust PII en Tu Servidor
+                        </h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                            Antes de procesar cualquier instrucción, el núcleo local sustituye automáticamente nombres de partes, identificadores fiscales, cuentas y montos por variables anónimas en memoria RAM volátil.
+                        </p>
+                    </div>
+
+                    <div class="architecture-box p-6 rounded-2xl space-y-3 relative">
+                        <div class="flex items-center justify-between">
+                            <span class="px-2.5 py-1 rounded bg-bronze-600 text-white font-mono text-[10px] font-bold">CAPA 3 • ENTREGA</span>
+                            <i class="fa-solid fa-file-signature text-bronze-600 text-lg"></i>
+                        </div>
+                        <h3 class="font-serif font-semibold text-base sm:text-lg text-oxford-900 dark:text-white">
+                            Ensamblaje Fiel y Sello de Auditoría
+                        </h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                            El documento final se ensambla dentro de tu entorno respetando la estructura exacta de tu plantilla original y generando un sello criptográfico SHA-256 de cumplimiento deontológico.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Simulador Conceptual con Datos 100% Ficticios / Institucionales -->
+                <div class="p-5 sm:p-7 rounded-2xl bg-ivory-100/80 dark:bg-slate-950 border border-ivory-300 dark:border-slate-800 space-y-4">
+                    <div class="flex flex-wrap items-center justify-between gap-2">
+                        <span class="text-xs font-mono font-bold uppercase text-oxford-900 dark:text-amber-300">
+                            <i class="fa-solid fa-eye-slash mr-1.5"></i>Demostración de Anonimización en Memoria Local (Datos Ficticios de Prueba)
+                        </span>
+                        <span id="piiCountBadge" class="px-2.5 py-0.5 rounded-full bg-emerald-700 text-white text-[10px] font-mono font-bold">
+                            4 Datos Sensibles Enmascarados
+                        </span>
+                    </div>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                        <div>
+                            <label for="piiInputDemo" class="block text-[11px] font-mono text-slate-500 mb-1">Texto de entrada en el servidor del despacho (puedes editarlo):</label>
+                            <textarea id="piiInputDemo" rows="3" class="w-full p-3 rounded-xl bg-white dark:bg-slate-900 border border-ivory-300 dark:border-slate-800 text-xs font-mono text-oxford-900 dark:text-slate-200 focus:outline-none">La sociedad CORPORACIÓN ALFA, S.A. (ID Fiscal J-00000000-1), representada por el ciudadano JUAN PÉREZ (Doc. V-00.000.000), suscribe acuerdo confidencial por 50.000 USD. Correo: legal@empresa-ejemplo.com</textarea>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-oxford-900 text-slate-200 font-mono text-xs flex flex-col justify-between space-y-2">
+                            <div>
+                                <span class="text-[10px] text-emerald-400 uppercase font-bold block mb-1">Lo único que procesa el motor de inferencia (Cero Fugas):</span>
+                                <p id="piiOutputDemo" class="text-xs text-slate-200 leading-relaxed break-words"></p>
+                            </div>
+                            <div id="piiTokensList" class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 4. BIBLIOTECA CONECTADA DE 550 MODELOS JURÍDICOS -->
-        <section id="biblioteca" class="max-w-6xl mx-auto px-4 sm:px-8 space-y-10">
+        <!-- 3. EL RIESGO ÉTICO DEL SHADOW AI EN LOS DESPACHOS -->
+        <section id="el-riesgo" class="max-w-6xl mx-auto px-4 sm:px-8 space-y-10">
+            <div class="text-center max-w-3xl mx-auto space-y-3">
+                <span class="text-xs font-mono uppercase tracking-widest text-rose-700 dark:text-rose-400 font-bold">
+                    Responsabilidad Fiduciaria y Secreto Profesional
+                </span>
+                <h2 class="fluid-h2 font-serif font-semibold text-oxford-900 dark:text-white">
+                    Por qué una firma jurídica no puede permitir el uso de IA pública sin control perimetral
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="editorial-card p-6 sm:p-7 rounded-2xl space-y-3">
+                    <div class="w-10 h-10 rounded-xl bg-rose-50 dark:bg-rose-950/50 text-rose-700 dark:text-rose-400 flex items-center justify-center">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <h3 class="fluid-h3 font-serif font-semibold text-oxford-900 dark:text-white">1. Exposición del Secreto Profesional</h3>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                        Cuando asociados o pasantes pegan borradores societarios, estados financieros o estrategias de litigio en cuentas gratuitas o públicas de IA, la información sale del control físico y jurídico del despacho.
+                    </p>
+                </div>
+
+                <div class="editorial-card p-6 sm:p-7 rounded-2xl space-y-3">
+                    <div class="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-950/50 text-bronze-600 dark:text-amber-400 flex items-center justify-center">
+                        <i class="fa-solid fa-file-circle-xmark"></i>
+                    </div>
+                    <h3 class="fluid-h3 font-serif font-semibold text-oxford-900 dark:text-white">2. Pérdida del Estilo y Técnica de la Firma</h3>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                        Las herramientas genéricas redactan con fórmulas ambiguas o de otras jurisdicciones, ignorando las cláusulas de blindaje que tu despacho ha construido en su propia biblioteca de modelos.
+                    </p>
+                </div>
+
+                <div class="editorial-card p-6 sm:p-7 rounded-2xl space-y-3">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-400 flex items-center justify-center">
+                        <i class="fa-solid fa-scale-unbalanced"></i>
+                    </div>
+                    <h3 class="fluid-h3 font-serif font-semibold text-oxford-900 dark:text-white">3. Cero Trazabilidad ante Auditorías</h3>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                        Las empresas clientes y normativas internacionales exigen certificar cómo se procesa su información confidencial. Sin un entorno privado auditado, el bufete carece de respaldo verificable.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. CAPACIDADES Y MÓDULOS (VISTA CONCEPTUAL PROTEGIDA CONTRA COPIA) -->
+        <section id="capacidades" class="max-w-6xl mx-auto px-4 sm:px-8 space-y-8">
             <div class="text-center max-w-3xl mx-auto space-y-3">
                 <span class="text-xs font-mono uppercase tracking-widest text-bronze-600 dark:text-amber-300 font-bold">
-                    Patrimonio Documental Conectado a Google Drive
+                    Ecosistema Modular en Tu Propio Servidor
                 </span>
-                <h2 class="text-3xl sm:text-4xl font-serif font-semibold text-oxford-900 dark:text-white">
-                    550 Modelos Jurídicos Estructurados por Categoría y Requisitos Legales
+                <h2 class="fluid-h2 font-serif font-semibold text-oxford-900 dark:text-white">
+                    Qué integra tu instancia privada de AI GOVERN
                 </h2>
-                <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                    Cuando seleccionas un modelo, el sistema te indica inmediatamente qué variables exige la ley aplicable y qué recaudos debes solicitarle al cliente:
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+                    Explora la arquitectura funcional de los 4 pilares operativos (la interfaz completa se exhibe únicamente en sesiones de demostración acreditadas):
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                <div class="editorial-card p-6 rounded-2xl space-y-2.5">
-                    <div class="flex items-center justify-between text-xs font-mono text-bronze-600 dark:text-amber-400 font-bold">
-                        <span>01 • PODERES Y MANDATOS</span>
-                        <span>35+ Modelos</span>
+            <div class="editorial-card rounded-3xl overflow-hidden">
+                <div class="bg-ivory-100 dark:bg-slate-900 p-2 border-b border-ivory-200 dark:border-slate-800">
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-2">
+                        <button type="button" data-mod="modelos" class="mod-tab-btn py-3 px-3 rounded-xl font-semibold text-xs flex items-center justify-center gap-2 bg-oxford-900 text-white shadow-sm cursor-pointer transition">
+                            <i class="fa-solid fa-file-contract text-amber-400"></i>
+                            <span class="truncate">1. Tus Modelos & Recaudos</span>
+                        </button>
+                        <button type="button" data-mod="sparring" class="mod-tab-btn py-3 px-3 rounded-xl font-semibold text-xs flex items-center justify-center gap-2 bg-transparent text-slate-700 dark:text-slate-300 hover:bg-white/60 dark:hover:bg-slate-800 cursor-pointer transition">
+                            <i class="fa-solid fa-gavel text-bronze-600"></i>
+                            <span class="truncate">2. Copiloto & Excepciones</span>
+                        </button>
+                        <button type="button" data-mod="forense" class="mod-tab-btn py-3 px-3 rounded-xl font-semibold text-xs flex items-center justify-center gap-2 bg-transparent text-slate-700 dark:text-slate-300 hover:bg-white/60 dark:hover:bg-slate-800 cursor-pointer transition">
+                            <i class="fa-solid fa-magnifying-glass-chart text-emerald-600"></i>
+                            <span class="truncate">3. Auditoría de Contratos</span>
+                        </button>
+                        <button type="button" data-mod="despacho" class="mod-tab-btn py-3 px-3 rounded-xl font-semibold text-xs flex items-center justify-center gap-2 bg-transparent text-slate-700 dark:text-slate-300 hover:bg-white/60 dark:hover:bg-slate-800 cursor-pointer transition">
+                            <i class="fa-solid fa-calendar-check text-indigo-600"></i>
+                            <span class="truncate">4. Gestión & Términos</span>
+                        </button>
                     </div>
-                    <h3 class="font-serif font-semibold text-lg text-oxford-900 dark:text-white">Administración, Judiciales y Especiales</h3>
-                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Poderes generales con cláusula de autocontratación (Art. 1.171 CCV), poderes judiciales amplios (Art. 154 CPC), venta de inmuebles, sucesorales, aduanales y apostilla.</p>
                 </div>
 
-                <div class="editorial-card p-6 rounded-2xl space-y-2.5">
-                    <div class="flex items-center justify-between text-xs font-mono text-bronze-600 dark:text-amber-400 font-bold">
-                        <span>02 • MERCANTIL Y SOCIETARIO</span>
-                        <span>95+ Modelos</span>
+                <div class="p-6 sm:p-10">
+                    <!-- Módulo 1 -->
+                    <div id="mod-modelos" class="mod-panel grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-7 space-y-4">
+                            <span class="px-2.5 py-1 rounded bg-bronze-100 dark:bg-slate-800 text-bronze-600 dark:text-amber-300 font-mono text-[10px] font-bold uppercase">
+                                Automatización Documental Soberana
+                            </span>
+                            <h3 class="fluid-h3 font-serif font-semibold text-oxford-900 dark:text-white">
+                                Extracción inteligente de recaudos y ensamblaje sobre la biblioteca privada de tu despacho.
+                            </h3>
+                            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                El sistema procesa localmente imágenes de documentos de identidad, registros fiscales y títulos antecedentes enviados por el cliente, extrae las variables requeridas y ensambla el instrumento utilizando <strong>las plantillas maestras de tu propia firma</strong>, listas para revisión y visado en formato Word.
+                            </p>
+                        </div>
+                        <div class="lg:col-span-5 architecture-box p-6 rounded-2xl space-y-3 text-xs font-mono">
+                            <div class="text-oxford-900 dark:text-amber-300 font-bold border-b border-ivory-200 dark:border-slate-800 pb-2">
+                                FLUJO INTERNO EN TU SERVIDOR:
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-300">1. Recepción de recaudos fotográficos o PDF en entorno privado.</p>
+                            <p class="text-slate-600 dark:text-slate-300">2. Detección automática de variables faltantes según el modelo elegido de tu biblioteca.</p>
+                            <p class="text-emerald-700 dark:text-emerald-400 font-semibold">3. Emisión de borrador en formato forense sin exponer datos a terceros.</p>
+                        </div>
                     </div>
-                    <h3 class="font-serif font-semibold text-lg text-oxford-900 dark:text-white">Actas Constitutivas y Asambleas</h3>
-                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Constitución de C.A., S.R.L. y firmas personales, venta de acciones, aumento de capital por corrección monetaria, cambio de domicilio y aprobación de ejercicios.</p>
+
+                    <!-- Módulo 2 -->
+                    <div id="mod-sparring" class="mod-panel hidden grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-7 space-y-4">
+                            <span class="px-2.5 py-1 rounded bg-bronze-100 dark:bg-slate-800 text-bronze-600 dark:text-amber-300 font-mono text-[10px] font-bold uppercase">
+                                Litigio & Estrategia Procesal
+                            </span>
+                            <h3 class="fluid-h3 font-serif font-semibold text-oxford-900 dark:text-white">
+                                Sparring procesal, detección de contradicciones y evaluación de excepciones previas.
+                            </h3>
+                            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                Somete a prueba tus escritos de demanda o contestación frente a un copiloto calibrado con el ordenamiento procesal de tu jurisdicción y los precedentes internos de tu bufete, identificando debilidades argumentativas antes de presentar el escrito ante el tribunal.
+                            </p>
+                        </div>
+                        <div class="lg:col-span-5 architecture-box p-6 rounded-2xl space-y-3 text-xs font-mono">
+                            <div class="text-oxford-900 dark:text-amber-300 font-bold border-b border-ivory-200 dark:border-slate-800 pb-2">
+                                CAPACIDADES DE LITIGIO:
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-300">• Análisis de requisitos de admisibilidad y cuestiones previas.</p>
+                            <p class="text-slate-600 dark:text-slate-300">• Contraste contra jurisprudencia y doctrina propia del despacho.</p>
+                            <p class="text-emerald-700 dark:text-emerald-400 font-semibold">• Cero invención de citas o sentencias inexistentes.</p>
+                        </div>
+                    </div>
+
+                    <!-- Módulo 3 -->
+                    <div id="mod-forense" class="mod-panel hidden grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-7 space-y-4">
+                            <span class="px-2.5 py-1 rounded bg-emerald-100 dark:bg-slate-800 text-emerald-800 dark:text-emerald-300 font-mono text-[10px] font-bold uppercase">
+                                Auditoría Contractual & Redline
+                            </span>
+                            <h3 class="fluid-h3 font-serif font-semibold text-oxford-900 dark:text-white">
+                                Cotejo de borradores de la contraparte contra las políticas de tu cliente.
+                            </h3>
+                            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                Detecta cláusulas asimétricas, renuncias de jurisdicción, penalidades ocultas y modificaciones sutiles entre versiones contractuales en segundos, proponiendo la redacción alternativa alineada con los criterios de tu firma.
+                            </p>
+                        </div>
+                        <div class="lg:col-span-5 architecture-box p-6 rounded-2xl space-y-3 text-xs font-mono">
+                            <div class="text-oxford-900 dark:text-amber-300 font-bold border-b border-ivory-200 dark:border-slate-800 pb-2">
+                                CONTROL CONTRACTUAL:
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-300">• Semáforo de riesgos patrimoniales y procesales.</p>
+                            <p class="text-slate-600 dark:text-slate-300">• Generación inmediata de cláusulas de reemplazo (Redline).</p>
+                            <p class="text-emerald-700 dark:text-emerald-400 font-semibold">• Procesamiento íntegro bajo protocolo Zero-Trust PII.</p>
+                        </div>
+                    </div>
+
+                    <!-- Módulo 4 -->
+                    <div id="mod-despacho" class="mod-panel hidden grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-7 space-y-4">
+                            <span class="px-2.5 py-1 rounded bg-indigo-100 dark:bg-slate-800 text-indigo-800 dark:text-indigo-300 font-mono text-[10px] font-bold uppercase">
+                                Control Operativo & FinOps Legal
+                            </span>
+                            <h3 class="fluid-h3 font-serif font-semibold text-oxford-900 dark:text-white">
+                                Planificador de expedientes, cómputo de días de despacho judicial, minutas de reunión y métricas de ROI.
+                            </h3>
+                            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                Centraliza el seguimiento de asuntos por abogado, el calendario procesal (distinguiendo días hábiles de despacho y días continuos), la generación de minutas de reunión con asignación directa de compromisos y los reportes ejecutivos de valor aportado para la dirección.
+                            </p>
+                        </div>
+                        <div class="lg:col-span-5 architecture-box p-6 rounded-2xl space-y-3 text-xs font-mono">
+                            <div class="text-oxford-900 dark:text-amber-300 font-bold border-b border-ivory-200 dark:border-slate-800 pb-2">
+                                GOBIERNO DEL DESPACHO:
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-300">• Tablero Kanban diferenciado para Cartera Externa e In-House.</p>
+                            <p class="text-slate-600 dark:text-slate-300">• Alertas preventivas de vencimientos fatales y poderes societarios.</p>
+                            <p class="text-emerald-700 dark:text-emerald-400 font-semibold">• Reportes ejecutivos descargables en un clic.</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="editorial-card p-6 rounded-2xl space-y-2.5">
-                    <div class="flex items-center justify-between text-xs font-mono text-bronze-600 dark:text-amber-400 font-bold">
-                        <span>03 • INMOBILIARIO Y CONTRATOS</span>
-                        <span>140+ Modelos</span>
-                    </div>
-                    <h3 class="font-serif font-semibold text-lg text-oxford-900 dark:text-white">Compraventas, Opciones y Arrendamientos</h3>
-                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Opciones de compraventa con cláusula penal, ventas con reserva de dominio, hipotecas, dación en pago, comodatos y arrendamiento de locales comerciales.</p>
-                </div>
-
-                <div class="editorial-card p-6 rounded-2xl space-y-2.5">
-                    <div class="flex items-center justify-between text-xs font-mono text-bronze-600 dark:text-amber-400 font-bold">
-                        <span>04 • FAMILIA Y SUCESIONES</span>
-                        <span>110+ Modelos</span>
-                    </div>
-                    <h3 class="font-serif font-semibold text-lg text-oxford-900 dark:text-white">Sucesiones, Divorcios y LOPNNA</h3>
-                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Aceptación de herencia a beneficio de inventario, partición amigable, capitulaciones matrimoniales, divorcio 185-A / desafecto, curatelas y autorizaciones de viaje.</p>
-                </div>
-
-                <div class="editorial-card p-6 rounded-2xl space-y-2.5">
-                    <div class="flex items-center justify-between text-xs font-mono text-bronze-600 dark:text-amber-400 font-bold">
-                        <span>05 • PRÁCTICA FORENSE Y LITIGIO</span>
-                        <span>120+ Modelos</span>
-                    </div>
-                    <h3 class="font-serif font-semibold text-lg text-oxford-900 dark:text-white">Demandas, Escritos y Diligencias</h3>
-                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Oposición de cuestiones previas (Art. 346 CPC), acciones interdictales, cobro de bolívares/divisas, tacha de instrumentos, informes y anuncio de casación.</p>
-                </div>
-
-                <div class="editorial-card p-6 rounded-2xl space-y-2.5">
-                    <div class="flex items-center justify-between text-xs font-mono text-bronze-600 dark:text-amber-400 font-bold">
-                        <span>06 • LABORAL Y CORPORATIVO</span>
-                        <span>50+ Modelos</span>
-                    </div>
-                    <h3 class="font-serif font-semibold text-lg text-oxford-900 dark:text-white">Transacciones, Finiquitos y SaaS</h3>
-                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Actas transaccionales de liquidación laboral con efecto de cosa juzgada, contratos de consultoría mercantil no laboral, NDAs y contratos tecnológicos.</p>
+                <!-- Cintillo de Protección de Propiedad Intelectual -->
+                <div class="bg-ivory-100/90 dark:bg-slate-950 px-6 py-4 border-t border-ivory-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <span class="text-xs font-mono text-slate-600 dark:text-slate-400 flex items-center gap-2 text-center sm:text-left">
+                        <i class="fa-solid fa-lock text-bronze-600"></i>
+                        <span>Por razones de confidencialidad y resguardo de propiedad intelectual, el acceso a la consola operativa se realiza mediante sesión privada.</span>
+                    </span>
+                    <button type="button" id="showcaseDemoBtn" class="shrink-0 px-5 py-2.5 rounded-xl bg-oxford-900 hover:bg-oxford-800 dark:bg-amber-500 dark:text-slate-950 text-white text-xs font-semibold cursor-pointer transition">
+                        Solicitar Demostración Privada →
+                    </button>
                 </div>
             </div>
         </section>
 
-        <!-- 5. TABLA COMPARATIVA TRANSPARENTE Y MODALIDADES DE INVERSIÓN -->
-        <section id="comparativa" class="max-w-6xl mx-auto px-4 sm:px-8 space-y-10">
+        <!-- 5. METODOLOGÍA DE IMPLEMENTACIÓN EN EL SERVIDOR DEL CLIENTE -->
+        <section id="metodo" class="max-w-6xl mx-auto px-4 sm:px-8 space-y-10">
             <div class="text-center max-w-3xl mx-auto space-y-3">
                 <span class="text-xs font-mono uppercase tracking-widest text-bronze-600 dark:text-amber-300 font-bold">
-                    Transparencia Comercial y Retorno de Inversión
+                    Implementación Llave en Mano
                 </span>
-                <h2 class="text-3xl sm:text-4xl font-serif font-semibold text-oxford-900 dark:text-white">
-                    Por qué los despachos medianos y abogados litigantes eligen AI GOVERN
+                <h2 class="fluid-h2 font-serif font-semibold text-oxford-900 dark:text-white">
+                    Cómo instalamos tu sistema y conectamos los modelos de tu despacho
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                <div class="editorial-card p-6 rounded-2xl space-y-2.5">
+                    <span class="text-xl font-mono font-bold text-bronze-600 dark:text-amber-400">01</span>
+                    <h3 class="font-serif font-semibold text-base sm:text-lg text-oxford-900 dark:text-white">Diagnóstico de Flujos</h3>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Evaluamos las áreas de práctica de tu firma o gerencia legal y definimos las reglas de privacidad y roles de acceso de tu equipo.</p>
+                </div>
+                <div class="editorial-card p-6 rounded-2xl space-y-2.5">
+                    <span class="text-xl font-mono font-bold text-bronze-600 dark:text-amber-400">02</span>
+                    <h3 class="font-serif font-semibold text-base sm:text-lg text-oxford-900 dark:text-white">Conexión de Tu Biblioteca</h3>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Enlazamos de forma segura tus carpetas privadas de contratos, poderes, actas y escritos para que el sistema redacte bajo tus propios estándares.</p>
+                </div>
+                <div class="editorial-card p-6 rounded-2xl space-y-2.5">
+                    <span class="text-xl font-mono font-bold text-bronze-600 dark:text-amber-400">03</span>
+                    <h3 class="font-serif font-semibold text-base sm:text-lg text-oxford-900 dark:text-white">Despliegue en Tu Nube</h3>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Instalamos la instancia privada en el servidor o nube de tu organización, activando el filtro Zero-Trust PII y el sellado criptográfico SHA-256.</p>
+                </div>
+                <div class="editorial-card p-6 rounded-2xl space-y-2.5">
+                    <span class="text-xl font-mono font-bold text-bronze-600 dark:text-amber-400">04</span>
+                    <h3 class="font-serif font-semibold text-base sm:text-lg text-oxford-900 dark:text-white">Adopción del Equipo</h3>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Entregamos el sistema operativo funcionando y capacitamos a socios y asociados para reducir hasta un 80% los tiempos de redacción y revisión.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. COMPARATIVA DE MERCADO -->
+        <section id="comparativa" class="max-w-6xl mx-auto px-4 sm:px-8 space-y-8">
+            <div class="text-center max-w-3xl mx-auto space-y-3">
+                <span class="text-xs font-mono uppercase tracking-widest text-bronze-600 dark:text-amber-300 font-bold">
+                    Comparativa Estratégica
+                </span>
+                <h2 class="fluid-h2 font-serif font-semibold text-oxford-900 dark:text-white">
+                    Soberanía técnica y adecuación a tu práctica frente a las alternativas del mercado
                 </h2>
             </div>
 
@@ -512,37 +550,37 @@
                 <div class="overflow-x-auto">
                     <table class="w-full text-left border-collapse text-xs sm:text-sm">
                         <thead>
-                            <tr class="bg-oxford-900 text-white font-mono text-xs uppercase">
-                                <th class="p-4 sm:p-5">Criterio Operativo</th>
-                                <th class="p-4 sm:p-5">ChatGPT / IA Pública</th>
-                                <th class="p-4 sm:p-5">Harvey AI / Legora (BigLaw)</th>
-                                <th class="p-4 sm:p-5 bg-bronze-600 text-white">AI GOVERN Legal OS</th>
+                            <tr class="bg-oxford-900 text-white font-mono text-[11px] uppercase">
+                                <th class="p-4">Dimensión</th>
+                                <th class="p-4">IA Pública (ChatGPT / similares)</th>
+                                <th class="p-4">Plataformas BigLaw Extranjeras</th>
+                                <th class="p-4 bg-bronze-600 text-white">AI GOVERN (Tu Instancia Privada)</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-ivory-200 dark:divide-slate-800">
                             <tr>
-                                <td class="p-4 sm:p-5 font-semibold text-oxford-900 dark:text-white">Protección del Secreto Profesional</td>
-                                <td class="p-4 sm:p-5 text-rose-600 dark:text-rose-400">Riesgo de fuga de nombres, RIFs y montos a servidores externos</td>
-                                <td class="p-4 sm:p-5 text-slate-600 dark:text-slate-300">Nube corporativa de terceros</td>
-                                <td class="p-4 sm:p-5 font-semibold text-emerald-700 dark:text-emerald-400">Anonimización Zero-Trust PII en memoria local + Sello SHA-256</td>
+                                <td class="p-4 font-semibold text-oxford-900 dark:text-white">Ubicación de los Datos</td>
+                                <td class="p-4 text-rose-600 dark:text-rose-400">Servidores públicos externos fuera de tu control</td>
+                                <td class="p-4 text-slate-600 dark:text-slate-300">Nube externa del proveedor</td>
+                                <td class="p-4 font-semibold text-emerald-700 dark:text-emerald-400">Desplegado en tu propio servidor o nube privada (No sale de tu entorno)</td>
                             </tr>
                             <tr>
-                                <td class="p-4 sm:p-5 font-semibold text-oxford-900 dark:text-white">Biblioteca Jurídica Venezolana y LATAM</td>
-                                <td class="p-4 sm:p-5 text-slate-600 dark:text-slate-400">Redacción genérica sin técnica registral ni visado</td>
-                                <td class="p-4 sm:p-5 text-slate-600 dark:text-slate-400">Enfocado en Common Law anglosajón</td>
-                                <td class="p-4 sm:p-5 font-semibold text-oxford-900 dark:text-white">550 Modelos reales conectados a Google Drive + Clonador .DOCX</td>
+                                <td class="p-4 font-semibold text-oxford-900 dark:text-white">Base Documental</td>
+                                <td class="p-4 text-slate-600 dark:text-slate-400">Textos genéricos sin el criterio de tu firma</td>
+                                <td class="p-4 text-slate-600 dark:text-slate-400">Enfocado en Common Law anglosajón</td>
+                                <td class="p-4 font-semibold text-oxford-900 dark:text-white">Conectado directamente a tus propios modelos jurídicos y precedentes</td>
                             </tr>
                             <tr>
-                                <td class="p-4 sm:p-5 font-semibold text-oxford-900 dark:text-white">Flujo WhatsApp + OCR de Cédulas/RIF</td>
-                                <td class="p-4 sm:p-5 text-slate-600 dark:text-slate-400">Manual (copiar y pegar cada dato)</td>
-                                <td class="p-4 sm:p-5 text-slate-600 dark:text-slate-400">No incluye flujo de WhatsApp ni recaudos locales</td>
-                                <td class="p-4 sm:p-5 font-semibold text-oxford-900 dark:text-white">Integrado (Fotos + Notas de Voz .ogg → Contrato Word)</td>
+                                <td class="p-4 font-semibold text-oxford-900 dark:text-white">Secreto Profesional (PII)</td>
+                                <td class="p-4 text-rose-600 dark:text-rose-400">Exposición directa de datos de clientes</td>
+                                <td class="p-4 text-slate-600 dark:text-slate-300">Dependiente de contratos de terceros</td>
+                                <td class="p-4 font-semibold text-emerald-700 dark:text-emerald-400">Enmascaramiento automático Zero-Trust PII en memoria local</td>
                             </tr>
                             <tr>
-                                <td class="p-4 sm:p-5 font-semibold text-oxford-900 dark:text-white">Accesibilidad e Inversión</td>
-                                <td class="p-4 sm:p-5 text-slate-600 dark:text-slate-400">20–30 USD/mes (sin gestión ni blindaje)</td>
-                                <td class="p-4 sm:p-5 text-rose-600 dark:text-rose-400">80.000 a 288.000 USD/año (mínimo 20 asientos)</td>
-                                <td class="p-4 sm:p-5 font-semibold text-bronze-600 dark:text-amber-300">Planes escalables para Abogado Individual, Firma Boutique y Departamentos In-House</td>
+                                <td class="p-4 font-semibold text-oxford-900 dark:text-white">Modelo Económico</td>
+                                <td class="p-4 text-slate-600 dark:text-slate-400">Suscripción individual sin gobernanza</td>
+                                <td class="p-4 text-rose-600 dark:text-rose-400">Licencias de 80.000 a 288.000 USD/año</td>
+                                <td class="p-4 font-semibold text-bronze-600 dark:text-amber-300">Implantación accesible a medida para firmas medianas, boutiques y departamentos legales</td>
                             </tr>
                         </tbody>
                     </table>
@@ -550,99 +588,58 @@
             </div>
         </section>
 
-        <!-- 6. DIRECCIÓN LETRADA Y CREDENCIALES REALES: BARBARA PICCOLO -->
-        <section id="direccion" class="max-w-5xl mx-auto px-4 sm:px-8">
-            <div class="editorial-card rounded-3xl p-8 sm:p-12">
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-                    <div class="md:col-span-8 space-y-4">
-                        <span class="text-xs font-mono font-bold uppercase tracking-widest text-bronze-600 dark:text-amber-300 block">
-                            Respaldo Profesional y Autoría Jurídica
-                        </span>
-                        <h2 class="text-2xl sm:text-4xl font-serif font-semibold text-oxford-900 dark:text-white leading-tight">
-                            "Un ingeniero programa código. Un abogado en ejercicio construye blindaje procesal y fe pública."
-                        </h2>
-                        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                            <strong>AI GOVERN</strong> fue creado y es dirigido por la <strong>Abg. Barbara Isabel Piccolo Obaldo (IPSA N° 102.485 • INPREABOGADO N° 115.794)</strong>, especialista con más de 20 años de trayectoria en derecho corporativo, inmobiliario, banca, cumplimiento normativo y estudios de <strong>Máster en LegalTech y Ciberseguridad</strong>.
-                        </p>
-                        <blockquote class="p-4 rounded-xl bg-ivory-100 dark:bg-slate-950 border-l-4 border-bronze-500 text-xs sm:text-sm text-oxford-900 dark:text-slate-200 italic font-serif">
-                            "Construí este sistema para mi propio despacho porque necesitaba pasar de las fotos de cédulas y audios de WhatsApp que envían los clientes a un contrato impecable en minutos, sin exponer jamás sus datos patrimoniales en plataformas públicas."
-                        </blockquote>
-                    </div>
-
-                    <div class="md:col-span-4 flex flex-col items-center justify-center p-6 rounded-2xl bg-ivory-50 dark:bg-slate-950 border border-ivory-200 dark:border-slate-800 text-center space-y-4">
-                        <div class="w-20 h-20 rounded-full bg-oxford-900 text-ivory-50 flex items-center justify-center font-serif text-2xl font-bold border-2 border-bronze-500 shadow-md">
-                            BP
-                        </div>
-                        <div class="space-y-1">
-                            <div class="font-serif font-bold text-lg text-oxford-900 dark:text-white">Abg. Barbara Piccolo</div>
-                            <div class="text-xs font-mono text-bronze-600 dark:text-amber-400 font-semibold">IPSA N° 102.485 • INPRE N° 115.794</div>
-                            <div class="text-[11px] text-slate-500 font-mono">General Counsel & LegalTech Architect</div>
-                        </div>
-                        <div class="flex flex-col w-full gap-2 pt-1">
-                            <a href="https://www.linkedin.com/in/barbara-piccolo-613705b6" target="_blank" rel="noopener" class="w-full py-2 px-4 rounded-lg bg-[#0A66C2] hover:opacity-95 text-white text-xs font-semibold flex items-center justify-center gap-2 transition">
-                                <i class="fa-brands fa-linkedin"></i>
-                                <span>Perfil Oficial en LinkedIn</span>
-                            </a>
-                            <a href="https://wa.me/584149065797?text=Hola%20Dra.%20Barbara,%20vi%20la%20plataforma%20AI%20GOVERN%20y%20me%20gustaria%20conversar" target="_blank" rel="noopener" class="w-full py-2 px-4 rounded-lg bg-emerald-700 hover:bg-emerald-600 text-white text-xs font-semibold flex items-center justify-center gap-2 transition">
-                                <i class="fa-brands fa-whatsapp"></i>
-                                <span>Contacto Directo WhatsApp</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 7. AGENDA OFICIAL GOOGLE CALENDAR Y CONTACTO -->
+        <!-- 7. AGENDA OFICIAL GOOGLE CALENDAR Y WHATSAPP SIN DATOS PERSONALES EXPUESTOS -->
         <section id="agenda" class="max-w-5xl mx-auto px-4 sm:px-8 text-center space-y-8">
             <div class="space-y-3 max-w-2xl mx-auto">
                 <span class="px-3.5 py-1 rounded-full bg-bronze-100 dark:bg-slate-900 border border-bronze-500/30 text-xs font-mono font-semibold text-bronze-600 dark:text-amber-300 uppercase">
-                    Atención Personalizada entre Colegas
+                    Sesión Privada de Diagnóstico e Implementación
                 </span>
-                <h2 class="text-3xl sm:text-4xl font-serif font-semibold text-oxford-900 dark:text-white">
-                    Agenda una Demostración de 15 Minutos o Prueba la Consola
+                <h2 class="fluid-h2 font-serif font-semibold text-oxford-900 dark:text-white">
+                    Evaluemos la Conexión con los Modelos de Tu Despacho
                 </h2>
-                <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
-                    Elige el día y hora en mi agenda oficial de Google Calendar para evaluar cómo conectar tu propio catálogo de contratos y activar la consola en tu despacho o empresa.
+                <p class="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed">
+                    Selecciona un horario disponible en nuestro calendario oficial para realizar una demostración privada en vivo y evaluar el despliegue en la infraestructura de tu firma o empresa.
                 </p>
             </div>
 
+            <!-- Google Calendar Oficial Responsivo -->
             <div class="editorial-card rounded-3xl overflow-hidden p-2 sm:p-4 text-left">
-                <iframe src="https://calendar.app.google/9ZYVDvdEsF361rKP7" title="Agenda Oficial Google Calendar Dra. Barbara Piccolo" style="border: 0; width: 100%; height: 680px; border-radius: 1rem; background-color: #ffffff;"></iframe>
+                <iframe src="https://calendar.app.google/9ZYVDvdEsF361rKP7" title="Agenda Oficial de Diagnóstico AI GOVERN" class="w-full h-[560px] sm:h-[680px] rounded-2xl bg-white border-0"></iframe>
             </div>
 
+            <!-- Botón de WhatsApp Oficial (Solo el enlace, sin mostrar número ni datos personales) -->
             <div class="pt-2 flex flex-wrap justify-center items-center gap-4 text-xs font-mono">
-                <a href="https://wa.me/584149065797?text=Hola%20Dra.%20Barbara,%20quiero%20agendar%20una%20demostracion%20de%20AI%20GOVERN" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white transition font-semibold shadow-sm">
-                    <i class="fa-brands fa-whatsapp text-sm"></i>
-                    <span>WhatsApp Directo (+58 414-9065797)</span>
+                <a href="https://wa.me/584149065797?text=Hola,%20deseo%20solicitar%20informacion%20y%20una%20demostracion%20privada%20del%20sistema%20AI%20GOVERN%20para%20mi%20despacho" target="_blank" rel="noopener" class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white transition font-semibold shadow-sm">
+                    <i class="fa-brands fa-whatsapp text-base"></i>
+                    <span>Contactar por WhatsApp Oficial</span>
                 </a>
-                <a href="mailto:barbarapiccolo@iagovern.space?subject=Solicitud%20de%20Acceso%20AI%20GOVERN" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white dark:bg-slate-900 border border-ivory-300 dark:border-slate-700 text-oxford-900 dark:text-slate-200 hover:border-oxford-900 transition font-semibold">
-                    <i class="fa-regular fa-envelope text-bronze-600"></i>
-                    <span>barbarapiccolo@iagovern.space</span>
-                </a>
+                <button type="button" id="footerDemoBtn" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-white dark:bg-slate-900 border border-ivory-300 dark:border-slate-700 text-oxford-900 dark:text-slate-200 hover:border-oxford-900 transition font-semibold cursor-pointer">
+                    <i class="fa-solid fa-key text-bronze-600"></i>
+                    <span>Solicitar Demostración Guiada</span>
+                </button>
             </div>
         </section>
 
     </main>
 
-    <!-- Pie de Página Institucional -->
-    <footer class="border-t border-ivory-200 dark:border-slate-800 bg-ivory-100/70 dark:bg-oxford-950 py-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-xs text-slate-600 dark:text-slate-400">
-            <div class="flex items-center gap-3">
+    <!-- Pie de Página Institucional (Sin Datos Personales) -->
+    <footer class="border-t border-ivory-200 dark:border-slate-800 bg-ivory-100/70 dark:bg-oxford-950 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-600 dark:text-slate-400">
+            <div class="flex items-center gap-2 text-center sm:text-left">
                 <span class="font-serif font-bold text-base text-oxford-900 dark:text-white">AI GOVERN</span>
-                <span class="font-mono">• Dirección Jurídica: Abg. Barbara Piccolo (IPSA 102.485 • INPRE 115.794)</span>
+                <span class="font-mono text-[11px]">• Infraestructura Privada de Inteligencia Artificial Jurídica</span>
             </div>
-            <div class="flex flex-wrap items-center gap-6 font-mono">
-                <a href="#demostracion" class="hover:text-oxford-900 dark:hover:text-white">Demostración</a>
-                <a href="#zero-trust" class="hover:text-oxford-900 dark:hover:text-white">Zero-Trust PII</a>
-                <a href="#biblioteca" class="hover:text-oxford-900 dark:hover:text-white">550 Modelos</a>
-                <a href="https://ai-govern-three.vercel.app/" target="_blank" rel="noopener" class="text-bronze-600 dark:text-amber-400 font-bold hover:underline">Abrir Consola →</a>
+            <div class="flex flex-wrap items-center justify-center gap-5 font-mono text-[11px]">
+                <a href="#soberania" class="hover:text-oxford-900 dark:hover:text-white">Soberanía</a>
+                <a href="#capacidades" class="hover:text-oxford-900 dark:hover:text-white">Módulos</a>
+                <a href="#metodo" class="hover:text-oxford-900 dark:hover:text-white">Implementación</a>
+                <a href="#agenda" class="text-bronze-600 dark:text-amber-400 font-bold hover:underline">Agendar Sesión →</a>
             </div>
         </div>
     </footer>
 
-    <!-- Modal Institucional de Solicitud de Licencia / Implementación -->
-    <div id="accessModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-oxford-950/70 backdrop-blur-sm">
+    <!-- Modal de Solicitud de Demostración Guiada (Filtro de Seguridad sin exponer URL de Consola) -->
+    <div id="accessModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-oxford-950/75 backdrop-blur-sm">
         <div class="relative w-full max-w-lg rounded-2xl bg-white dark:bg-oxford-900 border border-ivory-300 dark:border-slate-700 p-6 sm:p-8 shadow-2xl text-left space-y-5">
             <button type="button" id="closeModalBtn" class="absolute top-4 right-4 w-8 h-8 rounded-lg bg-ivory-100 dark:bg-slate-800 text-slate-500 hover:text-oxford-900 dark:hover:text-white flex items-center justify-center cursor-pointer">
                 <i class="fa-solid fa-xmark"></i>
@@ -650,52 +647,52 @@
 
             <div class="space-y-1.5">
                 <span class="text-[10px] font-mono uppercase tracking-widest text-bronze-600 dark:text-amber-300 font-bold">
-                    Acceso Directo o Implantación a Medida
+                    <i class="fa-solid fa-shield-halved mr-1"></i>Acceso Protegido para Firmas y Abogados
                 </span>
                 <h3 class="text-xl sm:text-2xl font-serif font-bold text-oxford-900 dark:text-white">
-                    Configura AI GOVERN para tu Ejercicio o Firma
+                    Solicitar Demostración Privada de AI GOVERN
                 </h3>
                 <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-                    Puedes ingresar ahora mismo a la consola interactiva o enviarme tus datos para configurar la conexión con tu propia biblioteca de contratos.
+                    Para proteger la arquitectura propietaria del sistema, las demostraciones operativas se realizan de forma personalizada evaluando las necesidades de tu despacho o empresa.
                 </p>
             </div>
 
             <form id="leadForm" class="space-y-3.5 text-xs">
                 <div>
-                    <label for="leadName" class="block font-mono text-slate-600 dark:text-slate-300 mb-1">Nombre y Apellido *</label>
-                    <input type="text" id="leadName" required placeholder="Ej: Dr. Alejandro Rivas" class="w-full px-3.5 py-2.5 rounded-lg bg-ivory-50 dark:bg-slate-950 border border-ivory-300 dark:border-slate-700 text-oxford-900 dark:text-white">
+                    <label for="leadName" class="block font-mono text-slate-600 dark:text-slate-300 mb-1">Nombre y Cargo *</label>
+                    <input type="text" id="leadName" required placeholder="Ej: Socio Director / General Counsel" class="w-full px-3.5 py-2.5 rounded-lg bg-ivory-50 dark:bg-slate-950 border border-ivory-300 dark:border-slate-700 text-oxford-900 dark:text-white">
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
-                        <label for="leadFirm" class="block font-mono text-slate-600 dark:text-slate-300 mb-1">Despacho o Empresa *</label>
-                        <input type="text" id="leadFirm" required placeholder="Ej: Rivas & Asociados" class="w-full px-3.5 py-2.5 rounded-lg bg-ivory-50 dark:bg-slate-950 border border-ivory-300 dark:border-slate-700 text-oxford-900 dark:text-white">
+                        <label for="leadFirm" class="block font-mono text-slate-600 dark:text-slate-300 mb-1">Firma o Organización *</label>
+                        <input type="text" id="leadFirm" required placeholder="Nombre del despacho o empresa" class="w-full px-3.5 py-2.5 rounded-lg bg-ivory-50 dark:bg-slate-950 border border-ivory-300 dark:border-slate-700 text-oxford-900 dark:text-white">
                     </div>
                     <div>
-                        <label for="leadPlan" class="block font-mono text-slate-600 dark:text-slate-300 mb-1">Modalidad de Interés *</label>
+                        <label for="leadPlan" class="block font-mono text-slate-600 dark:text-slate-300 mb-1">Modalidad de Despliegue *</label>
                         <select id="leadPlan" class="w-full px-3.5 py-2.5 rounded-lg bg-ivory-50 dark:bg-slate-950 border border-ivory-300 dark:border-slate-700 text-oxford-900 dark:text-white">
-                            <option value="Licencia Abogado Pro (550 Modelos + OCR)">Licencia Abogado Pro</option>
-                            <option value="Implantación Despacho Boutique Soberano">Despacho Boutique (3-15 Abogados)</option>
+                            <option value="Despliegue en Servidor / Nube Propia del Despacho">En Servidor / Nube del Despacho</option>
+                            <option value="Conexión de Biblioteca de Modelos Jurídicos">Conexión de Modelos Propios</option>
                             <option value="Departamento Legal Corporativo In-House">Departamento Legal In-House</option>
                         </select>
                     </div>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
-                        <label for="leadEmail" class="block font-mono text-slate-600 dark:text-slate-300 mb-1">Correo Electrónico *</label>
-                        <input type="email" id="leadEmail" required placeholder="contacto@despacho.com" class="w-full px-3.5 py-2.5 rounded-lg bg-ivory-50 dark:bg-slate-950 border border-ivory-300 dark:border-slate-700 text-oxford-900 dark:text-white">
+                        <label for="leadEmail" class="block font-mono text-slate-600 dark:text-slate-300 mb-1">Correo Corporativo *</label>
+                        <input type="email" id="leadEmail" required placeholder="correo@firma.com" class="w-full px-3.5 py-2.5 rounded-lg bg-ivory-50 dark:bg-slate-950 border border-ivory-300 dark:border-slate-700 text-oxford-900 dark:text-white">
                     </div>
                     <div>
-                        <label for="leadPhone" class="block font-mono text-slate-600 dark:text-slate-300 mb-1">WhatsApp *</label>
-                        <input type="tel" id="leadPhone" required placeholder="+58 414 0000000" class="w-full px-3.5 py-2.5 rounded-lg bg-ivory-50 dark:bg-slate-950 border border-ivory-300 dark:border-slate-700 text-oxford-900 dark:text-white">
+                        <label for="leadCountry" class="block font-mono text-slate-600 dark:text-slate-300 mb-1">País / Jurisdicción *</label>
+                        <input type="text" id="leadCountry" required placeholder="Ej: Venezuela, Colombia, España..." class="w-full px-3.5 py-2.5 rounded-lg bg-ivory-50 dark:bg-slate-950 border border-ivory-300 dark:border-slate-700 text-oxford-900 dark:text-white">
                     </div>
                 </div>
 
                 <div class="pt-2 flex flex-col sm:flex-row gap-2.5">
                     <button type="submit" class="flex-1 py-3 px-4 rounded-xl bg-oxford-900 hover:bg-oxford-800 dark:bg-amber-500 dark:text-slate-950 text-white font-semibold text-xs cursor-pointer transition">
-                        Enviar a la Dra. Piccolo y Abrir Consola →
+                        Enviar Solicitud por WhatsApp Oficial →
                     </button>
-                    <a href="https://ai-govern-three.vercel.app/" target="_blank" rel="noopener" class="py-3 px-4 rounded-xl border border-ivory-300 dark:border-slate-700 text-center font-semibold text-oxford-900 dark:text-slate-200 hover:bg-ivory-100 dark:hover:bg-slate-800">
-                        Ir Directo a la Consola
+                    <a href="#agenda" id="modalGoCalendarBtn" class="py-3 px-4 rounded-xl border border-ivory-300 dark:border-slate-700 text-center font-semibold text-oxford-900 dark:text-slate-200 hover:bg-ivory-100 dark:hover:bg-slate-800">
+                        Ver Calendario
                     </a>
                 </div>
             </form>
@@ -704,7 +701,7 @@
 
     <script>
         (function() {
-            // 1. Modo Claro Editorial (Por defecto) / Modo Nocturno Oxford
+            // 1. Modo Claro Editorial / Modo Nocturno
             var themeBtn = document.getElementById('themeToggleBtn');
             var themeIcon = document.getElementById('themeIcon');
             if (themeBtn) {
@@ -717,27 +714,41 @@
                 });
             }
 
-            // 2. Pestañas de la Consola de Demostración en Vivo
-            var tabButtons = document.querySelectorAll('.showcase-tab');
-            var tabPanels = {
-                redactor: document.getElementById('panel-redactor'),
-                whatsapp: document.getElementById('panel-whatsapp'),
-                sparring: document.getElementById('panel-sparring'),
-                despacho: document.getElementById('panel-despacho')
+            // 2. Menú Móvil Responsivo
+            var mobileBtn = document.getElementById('mobileMenuBtn');
+            var mobileDrawer = document.getElementById('mobileNavDrawer');
+            if (mobileBtn && mobileDrawer) {
+                mobileBtn.addEventListener('click', function() {
+                    mobileDrawer.classList.toggle('hidden');
+                });
+                document.querySelectorAll('.mobile-nav-link').forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        mobileDrawer.classList.add('hidden');
+                    });
+                });
+            }
+
+            // 3. Selector de Módulos Conceptuales
+            var modBtns = document.querySelectorAll('.mod-tab-btn');
+            var modPanels = {
+                modelos: document.getElementById('mod-modelos'),
+                sparring: document.getElementById('mod-sparring'),
+                forense: document.getElementById('mod-forense'),
+                despacho: document.getElementById('mod-despacho')
             };
 
-            tabButtons.forEach(function(btn) {
+            modBtns.forEach(function(btn) {
                 btn.addEventListener('click', function() {
-                    var target = btn.getAttribute('data-tab');
-                    tabButtons.forEach(function(b) {
-                        if (b.getAttribute('data-tab') === target) {
-                            b.className = 'showcase-tab py-3 px-4 rounded-xl font-semibold text-xs flex items-center justify-center gap-2 bg-oxford-900 text-white shadow-sm cursor-pointer transition';
+                    var target = btn.getAttribute('data-mod');
+                    modBtns.forEach(function(b) {
+                        if (b.getAttribute('data-mod') === target) {
+                            b.className = 'mod-tab-btn py-3 px-3 rounded-xl font-semibold text-xs flex items-center justify-center gap-2 bg-oxford-900 text-white shadow-sm cursor-pointer transition';
                         } else {
-                            b.className = 'showcase-tab py-3 px-4 rounded-xl font-semibold text-xs flex items-center justify-center gap-2 bg-transparent text-slate-700 dark:text-slate-300 hover:bg-white/60 dark:hover:bg-slate-800 cursor-pointer transition';
+                            b.className = 'mod-tab-btn py-3 px-3 rounded-xl font-semibold text-xs flex items-center justify-center gap-2 bg-transparent text-slate-700 dark:text-slate-300 hover:bg-white/60 dark:hover:bg-slate-800 cursor-pointer transition';
                         }
                     });
-                    Object.keys(tabPanels).forEach(function(k) {
-                        var p = tabPanels[k];
+                    Object.keys(modPanels).forEach(function(k) {
+                        var p = modPanels[k];
                         if (!p) return;
                         if (k === target) {
                             p.classList.remove('hidden');
@@ -750,69 +761,7 @@
                 });
             });
 
-            // 3. Selector Interactivo de Documentos en el Panel 1
-            var docSamples = {
-                compraventa: {
-                    code: 'INSTRUMENTO: CIV-104 • COMPRAVENTA INMOBILIARIA CON RESERVA',
-                    html: '<p><strong>DOCUMENTO DE COMPRAVENTA INMOBILIARIA CON RESERVA DE TRADICIÓN:</strong></p><p>Yo, <strong>ELBA JOSEFINA GUILLÉN RODRÍGUEZ</strong>, venezolana, mayor de edad, soltera, domiciliada en Turmero, Estado Aragua y titular de la Cédula de Identidad N° <strong>V-2.991.032</strong> (RIF: <strong>V029910320</strong>), declaro: Doy en venta pura y simple, perfecta e irrevocable a la ciudadana <strong>ANA BIANCA REYES BONILLA</strong>, titular de la Cédula de Identidad N° <strong>V-6.055.603</strong> (RIF: <strong>V060556031</strong>), un inmueble constituido por la Parcela C-13, Urbanización Las Cayenas, Código Catastral <strong>05-11-04-U08-091-003-009</strong>.</p><p><strong>CLÁUSULA SEGUNDA (DEL PRECIO Y RESERVA LEGAL):</strong> El precio convenido es la cantidad de <strong>10.000.000,00 Bs</strong>, pagaderos mediante Cheque de Gerencia N° 01002663 del Banco de Venezuela, quedando supeditada la tradición legal a la efectiva compensación bancaria conforme a los artículos 1.474 y 1.488 del Código Civil.</p>'
-                },
-                poder: {
-                    code: 'INSTRUMENTO: POD-01 • PODER GENERAL DE ADMINISTRACIÓN Y DISPOSICIÓN',
-                    html: '<p><strong>PODER GENERAL DE ADMINISTRACIÓN Y DISPOSICIÓN CON AUTOCONTRATACIÓN:</strong></p><p>Yo, <strong>CARLOS MENDOZA RIVAS</strong>, venezolano, mayor de edad, de este domicilio y titular de la Cédula de Identidad N° <strong>V-14.892.103</strong> (RIF: <strong>V-14892103-4</strong>), por el presente documento declaro: Confiero PODER GENERAL DE ADMINISTRACIÓN Y DISPOSICIÓN, amplio y suficiente cuanto en derecho se requiere, con expresa facultad para contratar consigo mismo conforme al artículo 1.171 del Código Civil Venezolano, a favor de la ciudadana <strong>ELENA RAMOS</strong>, titular de la Cédula N° <strong>V-16.402.881</strong>.</p><p><strong>FACULTADES EXPRESAS (ART. 1.688 CCV y 154 CPC):</strong> Para enajenar, gravar, arrendar bienes muebles e inmuebles, movilizar cuentas bancarias y representar mis derechos en juicio en todas las instancias, con facultad para convenir, desistir y transigir.</p>'
-                },
-                acta: {
-                    code: 'INSTRUMENTO: MER-12 • ACTA DE ASAMBLEA GENERAL EXTRAORDINARIA',
-                    html: '<p><strong>ACTA DE ASAMBLEA GENERAL EXTRAORDINARIA DE ACCIONISTAS:</strong></p><p>En el día de hoy, reunidos en la sede social de la sociedad mercantil <strong>MACHTIG ROTHE, C.A.</strong> (RIF: <strong>J-31294850-2</strong>), inscrita ante el Registro Mercantil Primero bajo el N° 45, Tomo 18-A, estando representado el cien por ciento (100%) del capital social suscrito y pagado, se constituye válidamente la Asamblea prescindiendo de convocatoria previa por la prensa conforme al artículo 274 del Código de Comercio.</p><p><strong>PUNTO ÚNICO DEL ORDEN DEL DÍA:</strong> Designación de la nueva Junta Directiva para el período estatutario 2026–2031 y otorgamiento de facultades de firma conjunta e individual.</p>'
-                }
-            };
-
-            var docBtns = document.querySelectorAll('.doc-preset-btn');
-            var docCodeEl = document.getElementById('docPreviewCode');
-            var docBodyEl = document.getElementById('docPreviewBody');
-            docBtns.forEach(function(btn) {
-                btn.addEventListener('click', function() {
-                    var key = btn.getAttribute('data-doc');
-                    if (docSamples[key] && docCodeEl && docBodyEl) {
-                        docCodeEl.textContent = docSamples[key].code;
-                        docBodyEl.innerHTML = docSamples[key].html;
-                    }
-                    docBtns.forEach(function(b) {
-                        if (b.getAttribute('data-doc') === key) {
-                            b.className = 'doc-preset-btn text-left p-3 rounded-xl border border-oxford-900 bg-ivory-50 dark:bg-slate-800/90 text-xs font-medium flex items-center justify-between cursor-pointer transition';
-                        } else {
-                            b.className = 'doc-preset-btn text-left p-3 rounded-xl border border-ivory-200 dark:border-slate-800 hover:border-slate-400 text-xs font-medium flex items-center justify-between cursor-pointer transition';
-                        }
-                    });
-                });
-            });
-
-            // 4. Selector de Tono WhatsApp en el Panel 2
-            var toneTexts = {
-                cercano: '¡Hola! Espero que estés muy bien. Ya revisé con detalle la cédula y la planilla sucesoral que me enviaste; los datos están completos y sirven perfectamente para el otorgamiento. Solo nos falta anexar el RIF actualizado para dejar el documento definitivo impreso con mi firma y visado INPRE N° 115.794. Te envío por aquí el detalle de los honorarios profesionales para agendar la firma este mismo martes. ¡Un abrazo!',
-                cobro: 'Hola, un gusto saludarte. Te escribo para confirmarte que ya verifiqué tu cédula y la planilla sucesoral; todo está en orden para redactar y visar tu instrumento con mi INPRE N° 115.794. Los honorarios profesionales por el estudio de recaudos, redacción y visado ascienden al monto acordado. Apenas me compartas el comprobante de transferencia dejamos listo el documento definitivo para firmar el martes en Notaría.',
-                formal: 'Estimado(a), reciba un cordial saludo. Habiendo efectuado la revisión jurídica preliminar de la cédula de identidad y la declaración sucesoral remitidas, le confirmo que los recaudos satisfacen los extremos de ley para el otorgamiento notarial del día martes, restando únicamente adjuntar el comprobante RIF vigente para la emisión y visado profesional definitivo. Atentamente, Abg. Barbara Piccolo.',
-                didactico: '¡Hola! Para explicártelo de forma muy sencilla: con la foto de la cédula y la planilla sucesoral que me mandaste ya tenemos el 90% listo. Yo me encargo de redactar todo el documento legal y ponerle mi sello y firma de abogada para que el martes solo tengas que ir a la Notaría con tu cédula laminada a firmar. Te paso los datos para el pago de honorarios y lo dejamos listo hoy mismo.'
-            };
-
-            var toneBtns = document.querySelectorAll('.tone-btn');
-            var waTextEl = document.getElementById('whatsappPreviewText');
-            toneBtns.forEach(function(btn) {
-                btn.addEventListener('click', function() {
-                    var t = btn.getAttribute('data-tone');
-                    if (toneTexts[t] && waTextEl) {
-                        waTextEl.textContent = toneTexts[t];
-                    }
-                    toneBtns.forEach(function(b) {
-                        if (b.getAttribute('data-tone') === t) {
-                            b.className = 'tone-btn p-2.5 rounded-xl border border-oxford-900 bg-oxford-900 text-white text-xs font-semibold cursor-pointer';
-                        } else {
-                            b.className = 'tone-btn p-2.5 rounded-xl border border-ivory-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-xs font-semibold cursor-pointer';
-                        }
-                    });
-                });
-            });
-
-            // 5. Simulador en Vivo de Sanitización Zero-Trust PII
+            // 4. Simulador de Anonimización Zero-Trust PII (Con datos 100% ficticios)
             var piiInput = document.getElementById('piiInputDemo');
             var piiOutput = document.getElementById('piiOutputDemo');
             var piiTokens = document.getElementById('piiTokensList');
@@ -833,15 +782,15 @@
                     });
                 }
 
-                maskPattern(/\b[VJGEP][-\s]?\d{7,9}(?:[-\s]?\d)?\b/gi, 'RIF_FISCAL');
-                maskPattern(/\b[VE][-\s]?(?:\d{1,2}\.\d{3}\.\d{3}|\d{6,8})\b/gi, 'CEDULA_ID');
-                maskPattern(/\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b/g, 'EMAIL_PRIVADO');
-                maskPattern(/\b(?:USD|Bs\.?|EUR|€|\$)\s?\d{1,3}(?:[.,]\d{3})*(?:[.,]\d{2})?\b|\b\d{1,3}(?:[.,]\d{3})+(?:[.,]\d{2})?\s?(?:USD|Bs\.?)\b/gi, 'MONTO_RESERVADO');
+                maskPattern(/\b[VJGEP][-\s]?\d{7,9}(?:[-\s]?\d)?\b/gi, 'ID_FISCAL');
+                maskPattern(/\b[VE][-\s]?(?:\d{1,2}\.\d{3}\.\d{3}|\d{6,8})\b/gi, 'DOC_IDENTIDAD');
+                maskPattern(/\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b/g, 'CORREO_RESERVADO');
+                maskPattern(/\b(?:USD|Bs\.?|EUR|€|\$)\s?\d{1,3}(?:[.,]\d{3})*(?:[.,]\d{2})?\b|\b\d{1,3}(?:[.,]\d{3})+(?:[.,]\d{2})?\s?(?:USD|Bs\.?)\b/gi, 'MONTO_PATRIMONIAL');
 
                 piiOutput.textContent = masked;
-                piiBadge.textContent = found.length + ' Entidades Blindadas';
+                piiBadge.textContent = found.length + ' Datos Sensibles Enmascarados';
                 piiTokens.innerHTML = found.map(function(item) {
-                    return '<span class="px-2 py-0.5 rounded bg-slate-800 border border-emerald-500/40 text-[10px] font-mono text-emerald-300">' + item.token + ' = ' + item.original + '</span>';
+                    return '<span class="px-2 py-0.5 rounded bg-slate-800 border border-emerald-500/40 text-[10px] font-mono text-emerald-300">' + item.token + '</span>';
                 }).join('');
             }
 
@@ -850,24 +799,41 @@
                 updatePIISimulator();
             }
 
-            // 6. Modal de Solicitud de Acceso / Implementación
+            // 5. Modal de Solicitud de Demostración Privada
             var modal = document.getElementById('accessModal');
-            var openBtn = document.getElementById('navCtaBtn');
+            var openBtns = [
+                document.getElementById('navCtaBtn'),
+                document.getElementById('heroDemoBtn'),
+                document.getElementById('showcaseDemoBtn'),
+                document.getElementById('footerDemoBtn')
+            ];
             var closeBtn = document.getElementById('closeModalBtn');
+            var goCalBtn = document.getElementById('modalGoCalendarBtn');
             var form = document.getElementById('leadForm');
 
-            if (openBtn && modal) {
-                openBtn.addEventListener('click', function() {
-                    modal.classList.remove('hidden');
-                    modal.classList.add('flex');
-                });
-            }
+            openBtns.forEach(function(b) {
+                if (b && modal) {
+                    b.addEventListener('click', function() {
+                        modal.classList.remove('hidden');
+                        modal.classList.add('flex');
+                    });
+                }
+            });
+
             if (closeBtn && modal) {
                 closeBtn.addEventListener('click', function() {
                     modal.classList.add('hidden');
                     modal.classList.remove('flex');
                 });
             }
+
+            if (goCalBtn && modal) {
+                goCalBtn.addEventListener('click', function() {
+                    modal.classList.add('hidden');
+                    modal.classList.remove('flex');
+                });
+            }
+
             if (form) {
                 form.addEventListener('submit', function(e) {
                     e.preventDefault();
@@ -875,21 +841,21 @@
                     var firm = document.getElementById('leadFirm').value;
                     var plan = document.getElementById('leadPlan').value;
                     var email = document.getElementById('leadEmail').value;
-                    var phone = document.getElementById('leadPhone').value;
+                    var country = document.getElementById('leadCountry').value;
 
                     try {
                         var list = JSON.parse(localStorage.getItem('aigovern_leads') || '[]');
-                        list.push({ name: name, firm: firm, plan: plan, email: email, phone: phone, date: new Date().toISOString() });
+                        list.push({ name: name, firm: firm, plan: plan, email: email, country: country, date: new Date().toISOString() });
                         localStorage.setItem('aigovern_leads', JSON.stringify(list));
                     } catch (err) {}
 
                     var msg = encodeURIComponent(
-                        "Hola Dra. Bárbara, solicito información sobre AI GOVERN Legal OS:\n" +
-                        "• Nombre: " + name + "\n" +
-                        "• Despacho/Empresa: " + firm + "\n" +
-                        "• Modalidad: " + plan + "\n" +
-                        "• Correo: " + email + "\n" +
-                        "• WhatsApp: " + phone
+                        "🏛️ *SOLICITUD DE DEMO PRIVADA - AI GOVERN*\n\n" +
+                        "• *Nombre y Cargo:* " + name + "\n" +
+                        "• *Firma/Empresa:* " + firm + "\n" +
+                        "• *Interés:* " + plan + "\n" +
+                        "• *Correo:* " + email + "\n" +
+                        "• *Jurisdicción:* " + country
                     );
                     if (modal) {
                         modal.classList.add('hidden');
